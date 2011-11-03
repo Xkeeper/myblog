@@ -7,3 +7,4 @@ db/schema.rb
 .bundle
 *.log
 .sass-cache/*
+.rvmrc

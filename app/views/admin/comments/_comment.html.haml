@@ -1,0 +1,10 @@
+%tr{:class => cycle('', 'alt'), :id => "comment-#{comment.id}"}
+  %td.created_at= comment.created_at.strftime('%d %b, %Y')
+  %td.author= link_to(comment.author, admin_comment_path(comment))
+  %td= truncate(comment.body, :length => 40)
+  %td= link_to(comment.post_title, admin_post_path(comment.post))
+  %td
+    = link_to(image_tag('silk/pencil.png', :alt => 'edit'), admin_comment_path(comment))
+    = form_for(comment, :as => :comment, :url => admin_comment_path(comment), :html => {:class => 'delete-item', :method => :delete}) do |form|
+      = image_submit_tag("silk/delete.png", :alt => "Delete Comment")
+

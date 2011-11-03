@@ -1,0 +1,7 @@
+%h1
+  Editing post - #{link_to(@post.title, post_path(@post))}
+= semantic_form_for([:admin, @post]) do |form|
+  = render :partial => 'form', :locals => {:form => form}
+  = form.buttons do
+    = form.commit_button("Save")
+

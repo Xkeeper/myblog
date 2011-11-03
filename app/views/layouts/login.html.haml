@@ -1,0 +1,15 @@
+!!!
+%html{:dir => "ltr", :lang => "en-US"}
+  %head
+    %meta{:charset => "utf-8"}
+      %title
+        = enki_config[:title]
+        \- Admin Login
+      = stylesheet_link_tag 'login'
+  %body
+    #page
+      #content
+        = yield
+      #nav
+        %ul
+          %li= link_to("View Site", '/', :title => 'View Site')

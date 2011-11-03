@@ -1,0 +1,16 @@
+%h1 Recent actions
+%table
+  %thead
+    %tr
+      %th Date
+      %th Description
+      %th Action
+  %tbody
+    - @undo_items.each do |undo_item|
+      %tr{:class => cycle('', 'alt')}
+        %td= undo_item.created_at.strftime('%d %b, %Y')
+        %td= undo_item.description
+        %td
+          = form_for(undo_item, :as => :undo_item, :url => undo_admin_undo_item_path(undo_item), :html => {:class => 'undo-item', :method => :post}) do |form|
+            = image_submit_tag("silk/arrow_undo.png", :alt => 'Undo')
+

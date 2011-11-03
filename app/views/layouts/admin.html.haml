@@ -1,0 +1,36 @@
+!!!
+%html{:dir => "ltr", :lang => "en-US"}
+  %head
+    %meta{:charset => "utf-8"}
+      %title
+        = enki_config[:title]
+        \- Admin
+      = csrf_meta_tag
+      = javascript_include_tag "admin"
+      = stylesheet_link_tag "admin"
+      = yield(:head)
+      - if flash[:notice]
+        :javascript
+          jQuery(document).ready(function() {
+            humanMsg.displayMsg(' escape_javascript(flash[:notice]) ');
+          })
+    %body
+    #page
+      #content
+        = yield
+      #nav
+        %ul
+          %li= nav_link_to("Dashboard", admin_root_path,       :accesskey => '1')
+          %li
+            = nav_link_to("Posts",     admin_posts_path,      :accesskey => '2')
+            = nav_link_to("(+)", new_admin_post_path, :accesskey => 'n')
+          %li
+            = nav_link_to("Pages",     admin_pages_path,      :accesskey => '3')
+            = nav_link_to("(+)", new_admin_page_path, :accesskey => 'p')
+          %li= nav_link_to("Comments",  admin_comments_path,   :accesskey => '4')
+          %li= nav_link_to("Actions",   admin_undo_items_path, :accesskey => '5')
+          %li= nav_link_to("Health",    admin_health_path,     :accesskey => '6')
+          %li.separator
+          %li= link_to("Logout", admin_session_path, :accesskey => 'l', :method => :delete)
+          %li= link_to("View Site", '/',             :accesskey => 'v', :title => 'View Site')
+

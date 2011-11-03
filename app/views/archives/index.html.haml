@@ -1,0 +1,16 @@
+- content_for(:page_title) do
+  = archives_title
+%h2 Archives
+- if @months.empty?
+  %p Once posts are added they will start to appear in this archive.
+- else
+  - @months.each do |month|
+    %h3= format_month(month.date)
+    %ul.archive-month
+      - month.posts.each do |post|
+        %li
+          = link_to(post.title, post_path(post))
+          - unless post.tags.empty?
+            %span.tags
+              (#{linked_tag_list(post.tags)})
+

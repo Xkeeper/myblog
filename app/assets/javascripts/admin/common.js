@@ -67,6 +67,7 @@ function asyncUndoBehaviour(options) {
       return false;
     }
   }));
+
   jQuery.each(["Ctrl+Z", "Meta+Z"], function () {
     shortcut.add(this, function() {
       item = undo_stack.pop();

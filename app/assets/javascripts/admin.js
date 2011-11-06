@@ -12,6 +12,5 @@
 //= require jquery.jfeed
 //= require humanmsg
 //= require common
-//= require ./binds/posts.js
 //= require_tree ./admin
 

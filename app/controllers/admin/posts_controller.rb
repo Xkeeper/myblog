@@ -45,7 +45,7 @@ class Admin::PostsController < Admin::BaseController
 
   def show
     respond_to do |format|
-      format.html {
+      format.html || format.js {
         render :partial => 'post', :locals => {:post => @post} if request.xhr?
       }
     end
@@ -60,7 +60,7 @@ class Admin::PostsController < Admin::BaseController
 
     respond_to do |format|
       format.js {
-        render :partial => 'posts/post.html.erb', :locals => {:post => @post}
+        render :partial => 'posts/post.html.haml', :locals => {:post => @post}
       }
     end
   end

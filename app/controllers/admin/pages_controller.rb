@@ -45,7 +45,7 @@ class Admin::PagesController < Admin::BaseController
 
   def show
     respond_to do |format|
-      format.html {
+      format.html || format.js  {
         render :partial => 'page', :locals => {:page => @page} if request.xhr?
       }
     end

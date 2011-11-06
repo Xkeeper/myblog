@@ -11,7 +11,7 @@ class Admin::CommentsController < Admin::BaseController
 
   def show
     respond_to do |format|
-      format.html {
+      format.html || format.js  {
         render :partial => 'comment', :locals => {:comment => @comment} if request.xhr?
       }
     end

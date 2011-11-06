@@ -66,7 +66,6 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def destroy
-=begin
     undo_item = @post.destroy_with_undo
 
     respond_to do |format|
@@ -82,7 +81,6 @@ class Admin::PostsController < Admin::BaseController
         }
       }
     end
-=end
   end
 
   protected

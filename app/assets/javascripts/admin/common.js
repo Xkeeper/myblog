@@ -103,7 +103,6 @@ function destroyAndUndoBehaviour(type) {
         });
       },
     });
-
     $('form.delete-item').submit(onDeleteFormClick);
   }
 }

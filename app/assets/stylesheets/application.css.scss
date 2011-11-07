@@ -3,10 +3,12 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
+ *= require blueprint
  *= require_tree ./site
 */
 
 /* High level containers */
+
 body
 {
   color: black;
@@ -63,7 +65,7 @@ h2 a, h3, h4, h5
 }
 
 /* Text */
-p 
+p
 {
   padding: 0px;
   margin-top: 0.5em;
@@ -87,13 +89,13 @@ ul.commentlist {
   left: 0px;
 }
 
-a 
+a
 {
   color: #000051;
-  
-  text-decoration: none;    
+
+  text-decoration: none;
 }
-  
+
 small a, label a
 {
   text-decoration: underline;
@@ -101,9 +103,9 @@ small a, label a
 
 a:hover
 {
-  text-decoration: underline;    
+  text-decoration: underline;
 }
-  
+
 #footer a
 {
   color: gray;
@@ -116,11 +118,11 @@ img
 }
 
 /* Two columns */
-#navigation 
+#navigation
 {
   position: absolute;
   width: 15em;
-  top: -1px; 
+  top: -1px;
   right: -1px;
 
   border: none;
@@ -142,12 +144,12 @@ img
 #navigation ul
 {
   padding-left: 10px;
-  
+
   margin-left: 0px;
   margin-top: 0px;
   list-style: none;
 }
-  
+
 #navigation ul li
 {
   padding-left: 0px;
@@ -173,7 +175,7 @@ img
   margin-bottom: 1em;
 }
 
-#main 
+#main
 {
   padding-right: 150px;
   padding-left: 0px;
@@ -184,9 +186,9 @@ img
 div.meta
 {
  margin-top: 1em;
- margin-bottom: 3em; 
+ margin-bottom: 3em;
 }
-/* Formatting */   
+/* Formatting */
 
 .meta ul
 {
@@ -218,7 +220,7 @@ div.meta
 {
   display: inline;
 }
- 
+
 .meta ul li:after
 {
   content: " | ";
@@ -234,7 +236,7 @@ h2
   margin-bottom: 0px;
 }
 
-.separator 
+.separator
 {
   height: 1px;
   margin-top:5px;
@@ -277,7 +279,7 @@ textarea
   background-color: #fafafa;
 }
 
-div.date 
+div.date
 {
   color: #999;
   font-size: .8em;

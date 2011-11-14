@@ -1,4 +1,4 @@
-= image_tag(comment.gravatar_url, :class => 'gravatar') unless not comment.author or comment.author.empty?
+= image_tag(comment.gravatar_url, :class => 'gravatar') unless not comment.author_email or comment.author_email.empty?
 %cite= author_link(comment)
 says:
 %br

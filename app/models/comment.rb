@@ -86,7 +86,8 @@ class Comment < ActiveRecord::Base
   end
 
   def send_notification
-    CommentMailer.notification(self)
+    mail = CommentMailer.notification(self)
+    mail.deliver
   end
 
   class << self

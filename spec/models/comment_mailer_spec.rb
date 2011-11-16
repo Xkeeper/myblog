@@ -30,7 +30,7 @@ describe CommentMailer do
     end
 
     it "should have right body" do
-      @mailer.body.should == "New comment on .\n\nThis is a comment\n"
+      @mailer.body.should == "New comment on .\nThis is a comment\n"
     end
 
 

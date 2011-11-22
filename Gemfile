@@ -49,7 +49,7 @@ gem 'gravtastic'
 group :development, :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
-  gem 'webrat'
+  gem 'capybara'
   gem 'factory_girl'
   gem 'rspec'
   gem 'rspec-rails'

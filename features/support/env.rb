@@ -5,9 +5,10 @@
 # files.
 
 require 'cucumber/rails'
+require 'capybara/rails'
+require 'capybara/cucumber'
+require 'capybara/session'
 
-require 'webrat'
-require 'webrat/core/matchers'
 
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
 # order to ease the transition to Capybara we set the default here. If you'd
@@ -40,11 +41,6 @@ rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
 
-Webrat.configure do |config|
-  config.mode = :rack
-  config.open_error_files = true
-end
-
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:
 #
@@ -61,7 +57,5 @@ end
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
-
-
 
 

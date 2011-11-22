@@ -25,7 +25,7 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
-  click_link(link)
+  page.click_link(link)
 end
 
 When /^(?:|I )follow "([^"]*)" within "([^"]*)"$/ do |link, parent|
@@ -142,7 +142,7 @@ end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if response.respond_to? :should
-    response.should contain(text)
+    page.should have_content(text)
   else
     assert_contain text
   end

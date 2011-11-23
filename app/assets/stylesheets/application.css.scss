@@ -8,186 +8,58 @@
 */
 
 /* High level containers */
+$blueprint_grid_columns: 24;
+$blueprint_grid_width: 40px;
+@import 'blueprint/liquid';
+
+
 
 body
 {
   color: black;
   font: normal 12px verdana, arial, helvetica, sans-serif;
   line-height: 1.5;
-  padding: 0px;
-  margin: 0px;
 }
 
 #page_container
 {
-  position: absolute;
+ @include container;
+  /*position: absolute;
   min-height: 400px;
   color: black;
   width: 100%;
+  */
 }
 
-#content {
-  width: 900px;
-  margin: 5px auto;
-  position: relative;
-  padding-right: 55px;
-/*  display: inline;*/
-}
-
-#footer
+#page_heading
 {
-  position: relative;
-  font-size: 8pt;
-/*  padding-top: 5px;*/
-  padding-right: 15px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  color: gray;
-/*  border-bottom: solid 1px #aaaaaa;*/
-}
-
-/* Headings */
-h1#page_heading
-{
-  font-size: 24pt;
-  color: #000 !important;
-}
-
-h2
-{
-  font-size: 1.4em;
-  color: #333333;
-}
-
-h2 a, h3, h4, h5
-{
-  color: #333333;
-}
-
-/* Text */
-p
-{
-  padding: 0px;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-strong
-{
-  color: #333333;
-}
-/* Links */
-ul.commentlist {
-  position: relative;
-  padding-left: 50px;
-}
-
-.gravatar {
-  position: absolute;
-  left: 0px;
-}
-
-a
-{
-  color: #000051;
-
-  text-decoration: none;
-}
-
-small a, label a
-{
-  text-decoration: underline;
-}
-
-a:hover
-{
-  text-decoration: underline;
-}
-
-#footer a
-{
-  color: gray;
-  text-decoration: underline;
-}
-
-img
-{
-  border: solid 1px black;
-}
-
-/* Two columns */
-#navigation
-{
-  position: absolute;
-  width: 15em;
-  top: -1px;
-  right: -1px;
-
-  border: none;
-  padding: 5px;
-}
-
-#navigation h2
-{
-  display: inline;
-}
-
-
-#navigation label
-{
-  margin-left: 0;
-  font-style: normal;
-}
-
-#navigation ul
-{
-  padding-left: 10px;
-
-  margin-left: 0px;
-  margin-top: 0px;
-  list-style: none;
-}
-
-#navigation ul li
-{
-  padding-left: 0px;
-  margin-left: 0px;
-}
-
-#navigation h3
-{
-  font-size: 1.2em;
-  font-weight: bold;
-  font-family: verdana,arial,helvetica,sans-serif;
-}
-
-#navigation input
-{
-  border: solid 1px black;
-  width: 100%;
-  margin-left: 10px;
-}
-
-#navigation form
-{
-  margin-bottom: 1em;
+  text-align:center;
+  @include column(24,true);
 }
 
 #main
 {
-  padding-right: 150px;
-  padding-left: 0px;
-  padding-top: 0px;
-  padding-bottom: 40px;
+    @include prepend(2);
+    @include column(16);
 }
 
-div.meta
+#navigation
 {
- margin-top: 1em;
- margin-bottom: 3em;
+    @include column(6);
+    @include last;
 }
+#footer
+{
+    text-align:center;
+    margin-top: 4.5em;
+    @include column(24);
+    @include last;
+
+}
+
+
+
+
 /* Formatting */
 
 .meta ul

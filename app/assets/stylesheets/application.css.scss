@@ -9,16 +9,25 @@
 
 /* High level containers */
 $blueprint_grid_columns: 24;
-$blueprint_grid_width: 40px;
+@import 'blueprint/reset';
+@import 'blueprint/typography';
 @import 'blueprint/liquid';
+@import 'blueprint/scaffolding';
+
+@import 'compass';
 
 
-
+html
+{
+    height:100%;
+}
 body
 {
   color: black;
   font: normal 12px verdana, arial, helvetica, sans-serif;
   line-height: 1.5;
+  height:100%;
+  background-image:url("/assets/bgnoise_lg.png");
 }
 
 #page_container
@@ -29,6 +38,11 @@ body
   color: black;
   width: 100%;
   */
+  min-height:100%;
+}
+#content
+{
+
 }
 
 #page_heading
@@ -39,8 +53,15 @@ body
 
 #main
 {
-    @include prepend(2);
-    @include column(16);
+    @include prepend(1);
+    @include column(14);
+}
+
+.entrybody
+{
+    @include prepend(0.5);
+    @include append(1.5);
+
 }
 
 #navigation
@@ -51,9 +72,9 @@ body
 #footer
 {
     text-align:center;
-    margin-top: 4.5em;
-    @include column(24);
-    @include last;
+    position:relative;
+    margin: 50px auto 0;
+    width:100%;
 
 }
 

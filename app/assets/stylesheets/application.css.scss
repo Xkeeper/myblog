@@ -68,11 +68,7 @@ body
 
 #main
 {
-    padding:10px 5px;
-    background:$bgcolor_content;
-    @include prepend(1);
-    @include column(14);
-    @include border-radius(25px);
+    @include column(16);
 }
 
 #navigation
@@ -95,7 +91,10 @@ body
 }
 .post
 {
-  margin:0 0 10px 0;
+  padding:10px 20px;
+  margin:0 0 20px 0;
+  background:$bgcolor_content;
+  @include border-radius(25px);
 
   h2 {
     font: normal 14px verdana, arial, helvetica, sans-serif;

@@ -9,6 +9,9 @@
 
 /* High level containers */
 $blueprint_grid_columns: 24;
+$bgcolor_content: #ededed;
+$bgcolor_header: $bgcolor_content;
+$bgcolor_navigation: $bgcolor_content;
 @import 'blueprint/reset';
 @import 'blueprint/typography';
 @import 'blueprint/liquid';
@@ -27,7 +30,7 @@ body
   font: normal 12px verdana, arial, helvetica, sans-serif;
   line-height: 1.5;
   height:100%;
-  background-image:url("/assets/bgnoise_lg.png");
+  background:url("/assets/background-1.jpg") #2e2e2e;
 }
 
 #page_container
@@ -40,6 +43,16 @@ body
   */
   min-height:100%;
 }
+
+#header
+{
+ height:40px;
+ margin: 10px 0;
+ @include column(24);
+ @include last;
+ background:$bgcolor_header;
+ @include border-radius(25px);
+}
 #content
 {
 
@@ -47,36 +60,54 @@ body
 
 #page_heading
 {
+  padding:5px 0;
+  font: normal 17px verdana, arial, helvetica, sans-serif;
   text-align:center;
   @include column(24,true);
 }
 
 #main
 {
+    padding:10px 5px;
+    background:$bgcolor_content;
     @include prepend(1);
     @include column(14);
-}
-
-.entrybody
-{
-    @include prepend(0.5);
-    @include append(1.5);
-
+    @include border-radius(25px);
 }
 
 #navigation
 {
+    background:$bgcolor_navigation;
+    padding:5px 0;
+    @include border-radius(25px);
+    @include prepend(1);
     @include column(6);
     @include last;
 }
 #footer
 {
+    color:#aaaaaa;
     text-align:center;
     position:relative;
     margin: 50px auto 0;
     width:100%;
 
 }
+.post
+{
+  margin:0 0 10px 0;
+
+  h2 {
+    font: normal 14px verdana, arial, helvetica, sans-serif;
+    }
+
+  .entrybody {
+    @include prepend(0.5);
+    @include append(1.5);
+    margin:5px 0;
+    }
+}
+
 
 
 

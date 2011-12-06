@@ -10,27 +10,27 @@
       = yield(:head)
   %body
     #page_container
-      #content
+      #header
         %h1#page_heading
           %a{:href => root_url}= enki_config[:title]
-        #main
-          = yield
-        #navigation
-          %h2 Pages
+      #main
+        = yield
+      #navigation
+        %h2 Pages
+        %ul
+          - page_links_for_navigation.each do |link|
+            %li= link_to(link.name, link.url)
+        - unless category_links_for_navigation.empty?
+          %h2 Categories
           %ul
-            - page_links_for_navigation.each do |link|
+            - category_links_for_navigation.each do |link|
               %li= link_to(link.name, link.url)
-          - unless category_links_for_navigation.empty?
-            %h2 Categories
-            %ul
-              - category_links_for_navigation.each do |link|
-                %li= link_to(link.name, link.url)
-          %form#sform{:action => "http://www.google.com/search", :method => "get"}
-            %div
-              %h2
-                %label{:for => "q"} Search
-              %input#q{:name => "q", :type => "text", :value => ""}
-                %input{:name => "sitesearch", :type => "hidden", :value => enki_config[:url]}
+        -#%form#sform{:action => "http://www.google.com/search", :method => "get"}
+          %div
+            %h2
+              %label{:for => "q"} Search
+            %input#q{:name => "q", :type => "text", :value => ""}
+              %input{:name => "sitesearch", :type => "hidden", :value => enki_config[:url]}
     #footer
       = enki_config[:title]
       © #{enki_config[:author, :name]}. Valid

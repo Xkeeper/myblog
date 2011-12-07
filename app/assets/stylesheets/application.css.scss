@@ -100,11 +100,21 @@ body
     font: normal 14px verdana, arial, helvetica, sans-serif;
     }
 
-  .entrybody {
+}
+
+.entrybody
+{
     @include prepend(0.5);
     @include append(1.5);
     margin:5px 0;
-    }
+}
+
+#full_page
+{
+  padding:10px 20px;
+  margin:0 0 20px 0;
+  background:$bgcolor_content;
+  @include border-radius(25px);
 }
 
 

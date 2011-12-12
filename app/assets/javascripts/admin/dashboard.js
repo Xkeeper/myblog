@@ -19,7 +19,8 @@ $(document).ready(function (){
     $('.comment-body').hide();
   });
 
-  asyncUndoBehaviour();
+//This content removed by conflict with common.js in Asset Pipeline
+/*asyncUndoBehaviour();
 
   $('form.delete-item').submit(function () {
     asyncDeleteForm($(this));
@@ -30,4 +31,6 @@ $(document).ready(function (){
     $(this).parent('div').parent('div').remove();
     return false;
   });
+*/
+
 })

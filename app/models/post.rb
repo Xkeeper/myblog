@@ -89,8 +89,9 @@ class Post < ActiveRecord::Base
 
   def destroy_with_undo
     transaction do
+      item = DeletePostUndo.create_undo(self)
       self.destroy
-      return DeletePostUndo.create_undo(self)
+      return item
     end
   end
 

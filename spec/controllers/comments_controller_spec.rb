@@ -53,7 +53,8 @@ describe CommentsController, 'handling commenting' do
       :created_at                  => 1.year.ago,
       :denormalize_comments_count! => nil,
       :slug                        => 'a-post',
-      :day                         => '01'
+      :day                         => '01',
+      :title                       => ''
     }.each_pair do |attribute, value|
       @mock_post.stub!(attribute).and_return(value)
     end

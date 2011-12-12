@@ -12,9 +12,9 @@
       - if flash[:notice]
         :javascript
           jQuery(document).ready(function() {
-            humanMsg.displayMsg(' escape_javascript(flash[:notice]) ');
+            humanMsg.displayMsg(' #{ escape_javascript(flash[:notice]) } ');
           })
-    %body
+  %body
     #page
       #content
         = yield

@@ -12,9 +12,12 @@ require "active_resource/railtie"
 # once it is all sorted out. The const_defined check is required for 1.8.7 compat.
 YAML::ENGINE.yamler = "syck" if YAML.const_defined?("ENGINE")
 
-# If you have a Gemfile, require the gems listed there, including any gems
-# you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+if defined?(Bundler)
+  # If you precompile assets before deploying to production, use this line
+  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  # If you want your assets lazily compiled in production, use this line
+  # Bundler.require(:default, :assets, Rails.env)
+end
 
 module Enki
   class Application < Rails::Application
@@ -57,3 +60,4 @@ module Enki
     config.assets.enabled = true
   end
 end
+

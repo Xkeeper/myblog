@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../../spec_helper'
 
-describe "/posts/show.html.erb" do
+describe "/posts/show.html.haml" do
   include UrlHelper
 
   before(:each) do
@@ -13,16 +13,20 @@ describe "/posts/show.html.erb" do
     mock_comment = mock_model(Comment,
       :created_at              => 1.month.ago,
       :author                  => "Don Alias",
+      :author_email            => "xkeeper@0fh.ru",
       :author_url              => "http://enkiblog.com",
       :author_openid_authority => "http://enkiblog.com/server",
-      :body_html               => "A comment"
+      :body_html               => "A comment",
+      :gravatar_url            => "http://gravatar_url"
     )
 
     mock_comment2 = mock_model(Comment,
       :created_at              => 1.month.ago,
       :author                  => "Don Alias",
+      :author_email            => "xkeeper@0fh.ru",
       :author_url              => '',
-      :body_html               => "A comment"
+      :body_html               => "A comment",
+      :gravatar_url            => "http://gravatar_url"
     )
 
     @post = mock_model(Post,
@@ -42,6 +46,7 @@ describe "/posts/show.html.erb" do
   end
 
   it "should render a post" do
-    render :template => "/posts/show.html.erb"
+    render :template => "/posts/show.html.haml"
   end
 end
+

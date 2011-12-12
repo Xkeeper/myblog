@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.js do
-        render :partial => 'comment.html.erb', :locals => {:comment => @comment}
+        render :partial => 'comment.html.haml', :locals => {:comment => @comment}
       end
     end
   end

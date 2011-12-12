@@ -1,16 +1,20 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1.0.rc4'
+gem 'rails', '~> 3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # Asset template engines
-gem 'json'
-gem 'sass-rails', '~> 3.1.0'
-gem 'coffee-rails', '~> 3.1.0'
-gem 'uglifier'
-gem 'haml-rails'
+
+group :assets do
+    gem 'json'
+    gem 'sass-rails', '~> 3.1.0'
+    gem 'coffee-rails', '~> 3.1.0'
+    gem 'uglifier'
+    gem 'haml-rails'
+    gem "compass", '~> 0.12.alpha'
+end
 
 gem 'therubyracer'
 

@@ -8,3 +8,4 @@ db/schema.rb
 *.log
 .sass-cache/*
 .rvmrc
+.idea/*

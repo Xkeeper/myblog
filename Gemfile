@@ -42,6 +42,7 @@ gem 'formtastic'
 gem 'will_paginate', :git => 'https://github.com/xspond/will_paginate.git',
   :branch => 'rails3-1'
 gem 'gravtastic'
+gem 'loginza'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

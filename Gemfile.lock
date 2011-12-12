@@ -102,6 +102,8 @@ GEM
     json_pure (1.6.1)
     lesstile (1.0.1)
     libv8 (3.3.10.4)
+    loginza (0.2.0)
+      json
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -208,6 +210,7 @@ DEPENDENCIES
   jquery-rails
   json
   lesstile
+  loginza
   rack-openid
   rails (~> 3.1.1)
   rspec

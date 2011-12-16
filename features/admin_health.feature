@@ -6,5 +6,5 @@ Feature: Health Monitor
   Scenario: generating an exception
     Given I am logged in
     When I go to /admin
-    And I follow "health"
+    And I follow "Health"
     Then a RuntimeError is thrown when I press "throw exception"

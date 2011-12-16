@@ -8,186 +8,119 @@
 */
 
 /* High level containers */
+$blueprint_grid_columns: 24;
+$bgcolor_content: #ededed;
+$bgcolor_header: $bgcolor_content;
+$bgcolor_navigation: $bgcolor_content;
+@import 'blueprint/reset';
+@import 'blueprint/typography';
+@import 'blueprint/liquid';
+@import 'blueprint/scaffolding';
 
+@import 'compass';
+
+
+html
+{
+    height:100%;
+}
 body
 {
   color: black;
   font: normal 12px verdana, arial, helvetica, sans-serif;
   line-height: 1.5;
-  padding: 0px;
-  margin: 0px;
+  height:100%;
+  background:url("/assets/background-1.jpg") #2e2e2e;
 }
 
 #page_container
 {
-  position: absolute;
+ @include container;
+  /*position: absolute;
   min-height: 400px;
   color: black;
   width: 100%;
+  */
+  min-height:100%;
 }
 
-#content {
-  width: 900px;
-  margin: 5px auto;
-  position: relative;
-  padding-right: 55px;
-/*  display: inline;*/
-}
-
-#footer
+#header
 {
-  position: relative;
-  font-size: 8pt;
-/*  padding-top: 5px;*/
-  padding-right: 15px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  color: gray;
-/*  border-bottom: solid 1px #aaaaaa;*/
+ height:40px;
+ margin: 10px 0;
+ @include column(24);
+ @include last;
+ background:$bgcolor_header;
+ @include border-radius(25px);
 }
-
-/* Headings */
-h1#page_heading
+#content
 {
-  font-size: 24pt;
-  color: #000 !important;
+
 }
 
-h2
+#page_heading
 {
-  font-size: 1.4em;
-  color: #333333;
-}
-
-h2 a, h3, h4, h5
-{
-  color: #333333;
-}
-
-/* Text */
-p
-{
-  padding: 0px;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-strong
-{
-  color: #333333;
-}
-/* Links */
-ul.commentlist {
-  position: relative;
-  padding-left: 50px;
-}
-
-.gravatar {
-  position: absolute;
-  left: 0px;
-}
-
-a
-{
-  color: #000051;
-
-  text-decoration: none;
-}
-
-small a, label a
-{
-  text-decoration: underline;
-}
-
-a:hover
-{
-  text-decoration: underline;
-}
-
-#footer a
-{
-  color: gray;
-  text-decoration: underline;
-}
-
-img
-{
-  border: solid 1px black;
-}
-
-/* Two columns */
-#navigation
-{
-  position: absolute;
-  width: 15em;
-  top: -1px;
-  right: -1px;
-
-  border: none;
-  padding: 5px;
-}
-
-#navigation h2
-{
-  display: inline;
-}
-
-
-#navigation label
-{
-  margin-left: 0;
-  font-style: normal;
-}
-
-#navigation ul
-{
-  padding-left: 10px;
-
-  margin-left: 0px;
-  margin-top: 0px;
-  list-style: none;
-}
-
-#navigation ul li
-{
-  padding-left: 0px;
-  margin-left: 0px;
-}
-
-#navigation h3
-{
-  font-size: 1.2em;
-  font-weight: bold;
-  font-family: verdana,arial,helvetica,sans-serif;
-}
-
-#navigation input
-{
-  border: solid 1px black;
-  width: 100%;
-  margin-left: 10px;
-}
-
-#navigation form
-{
-  margin-bottom: 1em;
+  padding:5px 0;
+  font: normal 17px verdana, arial, helvetica, sans-serif;
+  text-align:center;
+  @include column(24,true);
 }
 
 #main
 {
-  padding-right: 150px;
-  padding-left: 0px;
-  padding-top: 0px;
-  padding-bottom: 40px;
+    @include column(16);
 }
 
-div.meta
+#navigation
 {
- margin-top: 1em;
- margin-bottom: 3em;
+    background:$bgcolor_navigation;
+    padding:5px 0;
+    @include border-radius(25px);
+    @include prepend(1);
+    @include column(6);
+    @include last;
 }
+#footer
+{
+    color:#aaaaaa;
+    text-align:center;
+    position:relative;
+    margin: 50px auto 0;
+    width:100%;
+
+}
+.post
+{
+  padding:10px 20px;
+  margin:0 0 20px 0;
+  background:$bgcolor_content;
+  @include border-radius(25px);
+
+  h2 {
+    font: normal 14px verdana, arial, helvetica, sans-serif;
+    }
+
+}
+
+.entrybody
+{
+    @include prepend(0.5);
+    @include append(1.5);
+    margin:5px 0;
+}
+
+#full_page
+{
+  padding:10px 20px;
+  margin:0 0 20px 0;
+  background:$bgcolor_content;
+  @include border-radius(25px);
+}
+
+
+
+
+
 /* Formatting */
 
 .meta ul

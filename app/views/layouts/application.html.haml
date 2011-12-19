@@ -8,34 +8,287 @@
       = javascript_include_tag 'application'
       = open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation]
       = yield(:head)
-  %body
-    #page_container
-      #header
-        %h1#page_heading
-          %a{:href => root_url}= enki_config[:title]
-      #main
-        = yield
-      #navigation
-        %h2 Pages
+  %body#home
+    %header
+      .row-1
+        .container_12.clearfix
+          .full-width
+            %h1
+              %a{:href => "./index.html"}
+                %img{:alt => "image", :src => "./assets/logo.png"}/
+              %i
+                PREMIUM PORTFOILIO AND BLOG THEME
+            %ul.icon-list
+              %li
+                %a{:href => "#"}
+                  %img{:alt => "image", :src => "./assets/twitter.png"}/
+              %li
+                %a{:href => "#"}
+                  %img{:alt => "image", :src => "./assets/google .png"}/
+              %li
+                %a{:href => "#"}
+                  %img{:alt => "image", :src => "./assets/facebook.png"}/
+              %li
+                %a{:href => "#"}
+                  %img{:alt => "image", :src => "./assets/dribble.png"}/
+              %li
+                %a{:href => "#"}
+                  %img{:alt => "image", :src => "./assets/vimeo.png"}/
+            %form#form-search{:enctype => "multipart/form-data", :method => "get"}
+              %fieldset
+                %input{:name => "search", :type => "text"}
+                  %a#send_bt{:href => "javascript:{}", :onclick => "jQuery('#form-search').submit();"} Go
+    %nav
+      .container_12.clearfix
+        .full-width
+          %ul.sf-menu
+            - page_links_for_navigation.each do |link|
+              %li{:class =>cp(link.url)}= link_to(link.name, link.url)
+    #main
+      = yield
+    -#navigation
+      %h2 Pages
+      %ul
+        - page_links_for_navigation.each do |link|
+          %li= link_to(link.name, link.url)
+      - unless category_links_for_navigation.empty?
+        %h2 Categories
         %ul
-          - page_links_for_navigation.each do |link|
+          - category_links_for_navigation.each do |link|
             %li= link_to(link.name, link.url)
-        - unless category_links_for_navigation.empty?
-          %h2 Categories
-          %ul
-            - category_links_for_navigation.each do |link|
-              %li= link_to(link.name, link.url)
-        -#%form#sform{:action => "http://www.google.com/search", :method => "get"}
-          %div
-            %h2
-              %label{:for => "q"} Search
-            %input#q{:name => "q", :type => "text", :value => ""}
-              %input{:name => "sitesearch", :type => "hidden", :value => enki_config[:url]}
-    #footer
-      = enki_config[:title]
-      © #{enki_config[:author, :name]}. Valid
-      %a{:href => "http://validator.w3.org/check?uri=referer"} HTML5
-      and #{link_to "ATOM", "http://feedvalidator.org/check.cgi?url=#{enki_config[:url]}/posts.atom"}. Powered by
-      = succeed "." do
-        %a{:href => "http://www.enkiblog.com", :title => "A Ruby on Rails blogging app for the fashionable developer"} Enki
+  %section#content
+    .main.clearfix
+      .row-1
+        %span.title.alignright
+          OUR blog entries
+          %img.arrow{:alt => "image", :src => "./assets/arrow.png"}/
+        %ul.breadcrumb
+          %li.where Where you are:
+          %li.home-br
+            %a{:href => "./index.html"} Home
+          %li Blog
+      .top25
+        .background.bottom54
+          .container_12.clearfix.top40
+            .blog-feed
+              .show-more
+                %a{:href => "./blog-single.html"}
+                %img{:alt => "image", :src => "./assets/page5-img1.jpg"}/
+                %i
+              .extra-wrap.top25
+                .data.data-indent
+                  .inner
+                    3
+                  11 Nov
+                .extr
+                  %h2.fs20 Et harum quidem rerum facilis est
+                  %p
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
+                    %a.link-1{:href => "#"} similique
+                    sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga...
+                  %p.top10
+                    %a.link{:href => "./blog-single.html"} Read more
+              .divider.top30
+              .top40
+                .show-more
+                  %a{:href => "./blog-single.html"}
+                  %img{:alt => "image", :src => "./assets/page5-img2.jpg"}/
+                  %i
+                .extra-wrap.top25
+                  .data.data-indent
+                    .inner
+                      27
+                    09 Nov
+                  .extr
+                    %h2.fs20 Nam libero tempore, cum soluta nobis est eligendi
+                    %p
+                      Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
+                      commodi consequatur?
+                    %p.top10
+                      %a.link{:href => "./blog-single.html"} Read more
+              .divider.top30
+              .top40
+                .show-more
+                  %a{:href => "./blog-single.html"}
+                  %img{:alt => "image", :src => "./assets/page5-img3.jpg"}/
+                  %i
+                .extra-wrap.top25
+                  .data.data-indent
+                    .inner
+                      35
+                    27 Nov
+                  .extr
+                    %h2.fs20 Quis autem vel eum iure reprehenderit
+                    %p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem...
+                    %p.top10
+                      %a.link{:href => "./blog-single.html"} Read more
+              .divider.top30
+              %ul.pager.top20
+                %li.prev
+                  %a{:href => "#"}
+                %li.next
+                  %a{:href => "#"}
+            .grid_4
+              .marg-left20
+                .marg-top5
+                  %h3 Text widget
+                  %p
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                    molestias excepturi sint occaecati cupiditate
+                .top30
+                  %h3.bottom10 Categories
+                  %ul.list
+                    %li
+                      %a{:href => "#"} Photografy
+                    %li
+                      %a{:href => "#"} Illustrations
+                    %li
+                      %a{:href => "#"} Tutorials
+                    %li
+                      %a{:href => "#"} Web design
+                    %li
+                      %a{:href => "#"} Inspiration
+                    %li
+                      %a{:href => "#"} Promotion
+                .top30
+                  %h3.bottom10 Most popular posts
+                  %ul.list
+                    %li
+                      %a{:href => "#"}
+                        %strong At vero eos et accusamus et iusto
+                      (
+                      %a{:href => "#"}> 34 comments
+                      )
+                    %li
+                      %a{:href => "#"}
+                        %strong Officia deserunt
+                      (
+                      %a{:href => "#"}> 81 comments
+                      )
+                    %li
+                      %a{:href => "#"}
+                        %strong Neque porro quisquam est
+                      (
+                      %a{:href => "#"}> 35 comments
+                      )
+                    %li
+                      %a{:href => "#"}
+                        %strong Quis nostrum exercitationem
+                      (
+                      %a{:href => "#"}> 23 comments
+                      )
+                    %li
+                      %a{:href => "#"}
+                        %strong Quis autem
+                      (
+                      %a{:href => "#"}> 46 comments
+                      )
+                .top30
+                  %h3.bottom15 Tags
+                  .tags.wrapper
+                    %a{:href => "#"} nostrum
+                    %a{:href => "#"} exercitationem
+                    %a{:href => "#"} cupiditate
+                    %a{:href => "#"} vero
+                    %a{:href => "#"} consequatur
+                    %a{:href => "#"} nostrum
+                    %a{:href => "#"} dolorum
+                    %a{:href => "#"} incidunt
+                    %a{:href => "#"} dignissimos
+                    %a{:href => "#"} minima
+                    %a{:href => "#"} molestias
+                    %a{:href => "#"} exercitationem
+                .top20
+                  %h3.bottom15 We are on Flickr
+                  .flickr
+                    %a{:href => "#"}
+                      %img{:alt => "image", :src => "./assets/page5-img4.jpg"}/
+                    %a{:href => "#"}
+                      %img{:alt => "image", :src => "./assets/page5-img5.jpg"}/
+                    %a{:href => "#"}
+                      %img{:alt => "image", :src => "./assets/page5-img6.jpg"}/
+                    %a{:href => "#"}
+                      %img{:alt => "image", :src => "./assets/page5-img7.jpg"}/
+                .top20
+                  %h3.bottom10 Archives
+                  %ul.list-4
+                    %li
+                      %a{:href => "#"} September 2011
+                    %li
+                      %a{:href => "#"} August 2011
+                    %li
+                      %a{:href => "#"} July 2011
+                    %li
+                      %a{:href => "#"} June 2011
+                    %li
+                      %a{:href => "#"} May 2011
+                    %li
+                      %a{:href => "#"} April 2011
+        .container_12.clearfix
+          .divider1
+      %footer
+        .container_12.relative
+          #twitter.twitter
+        .aside
+          .container_12.clearfix
+            .grid_2
+              %h3.bottom10 Blog Categories
+              %ul.list-1
+                %li
+                  %a{:href => "#"} Neque porro
+                %li
+                  %a{:href => "#"} Quisquam est
+                %li
+                  %a{:href => "#"} Qui dolorem
+                %li
+                  %a{:href => "#"} Ipsum quia
+                %li
+                  %a{:href => "#"} Neque porro
+            .grid_2
+              %h3.bottom10 Some Links
+              %ul.list-2
+                %li
+                  %a{:href => "#"} Neque porro
+                %li
+                  %a{:href => "#"} Quisquam est
+                %li
+                  %a{:href => "#"} Qui dolorem
+                %li
+                  %a{:href => "#"} Ipsum quia
+            .grid_4
+              %h3.bottom10 Our Lifestream
+              #lifestream
+            .grid_4
+              .wrapper.marg-top-pl6
+                %figure.logo-small
+                  %img{:alt => "image", :src => "./assets/logo-small.png"}/
+                .logo-info Premium Portfolio And Blog Theme
+              .top10.color
+                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur
+              %form#form-subscribe{:enctype => "multipart/form-data", :method => "get"}
+                %fieldset
+                  %input{:onblur => "if(this.value=='')this.value='your email';", :onclick => "if(this.value=='your email')this.value='';", :type => "text", :value => "your email"}
+                    %a.send_bt{:href => "javascript:{}"} subscribe
+        .row
+          .container_12.clearfix
+            .grid_12
+              %ul.footer-menu
+                %li
+                  %a{:href => "./index.html"} Home
+                %li
+                  %a{:href => "./about.html"} About
+                %li
+                  %a{:href => "./portfolio.html"} Portfolio
+                %li.current
+                  %a{:href => "./blog.html"} Blog
+                %li
+                  %a{:href => "./contact.html"} Contact
+              .fright
+                Copiright © 20011
+                %a{:href => "#"} Lustrel
+                by Fireform
+        .container_12
+          .divider1
+
+
 

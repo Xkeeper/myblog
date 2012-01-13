@@ -607,6 +607,7 @@ nav{
 	text-decoration:underline;
 }
 
+
 .reply-link{
 	text-decoration:none;
 	color:#6d6d6d;
@@ -1095,6 +1096,17 @@ footer .row a:hover{
 	position:relative;
 	z-index:1;
 	}
+#form-main .tag-input {
+	background:url(../assets/tag-bg.gif) 0 0 repeat-x;
+    width:auto;
+	text-decoration:none;
+    border: 0;
+	color:#777;
+	padding:4px 16px;
+	display:inline-block;
+	font-size:12px;
+	line-height:1.2em;
+}
 
 #form-main textarea {
 	height:112px;
@@ -1125,6 +1137,15 @@ footer .row a:hover{
 	line-height:1.2em;
 	border-radius:2px;
 	-moz-border-radius:2px;
+}
+#form-main .link-2{
+	text-decoration:none;
+    line-height: 18px;
+    padding: 0;
+
+}
+#form-main .link-2:hover{
+	text-decoration:underline;
 }
 .sent-result{
 	padding:8px 0 8px 16px;

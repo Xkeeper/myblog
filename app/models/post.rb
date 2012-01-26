@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
   before_validation       :set_dates
   before_save             :apply_filter
 
-  validates_presence_of   :title, :slug, :body
+  validates_presence_of   :title, :slug, :body, :body_header
 
   validate                :validate_published_at_natural
 
@@ -101,6 +101,7 @@ class Post < ActiveRecord::Base
 
   def apply_filter
     self.body_html = EnkiFormatter.format_as_xhtml(self.body)
+    self.body_header_html = EnkiFormatter.format_as_xhtml(self.body_header)
   end
 
   def set_dates

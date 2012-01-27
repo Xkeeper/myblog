@@ -51,4 +51,8 @@ Enki::Application.configure do
   config.active_support.deprecation = :notify
 
   ActionMailer::Base.delivery_method = :smtp
+
+  config.time_zone = "Moscow"
+
+
 end

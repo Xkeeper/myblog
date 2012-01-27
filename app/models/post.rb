@@ -8,9 +8,9 @@ class Post < ActiveRecord::Base
 
   before_validation       :generate_slug
   before_validation       :set_dates
-  before_save             :apply_filter
+  before_save             :apply_header, :apply_filter
 
-  validates_presence_of   :title, :slug, :body, :body_header
+  validates_presence_of   :title, :slug, :body
 
   validate                :validate_published_at_natural
 
@@ -33,7 +33,7 @@ class Post < ActiveRecord::Base
 
   attr_accessor :published_at_natural
   def published_at_natural
-    @published_at_natural ||= published_at.send_with_default(:strftime, 'now', "%Y-%m-%d %H:%M")
+    @published_at_natural ||= published_at.send_with_default(:strftime, 'now', "%Y-%m-%d %H:%M:%S")
   end
 
   class << self
@@ -99,14 +99,25 @@ class Post < ActiveRecord::Base
     published_at.beginning_of_month
   end
 
+  def apply_header
+    index = self.body.index('<blogcut>')
+    wordcount = index ? index : 250
+    charcount = self.body.rindex(/[\r\n]/, wordcount)
+    self.body_header = self.body[0...charcount]
+    #self.body = self.body[charcount..-1]
+  end
+
   def apply_filter
     self.body_html = EnkiFormatter.format_as_xhtml(self.body)
+    self.body_html.sub!(/<blogcut>.?<br \/>|<blogcut>/, "</p><p id='blogcut'>")
     self.body_header_html = EnkiFormatter.format_as_xhtml(self.body_header)
   end
 
   def set_dates
     self.edited_at = Time.now if self.edited_at.nil? || !minor_edit?
     self.published_at = Chronic.parse(self.published_at_natural)
+    print "natural  #{self.published_at_natural}"
+    print "publat #{self.published_at}"
   end
 
   def denormalize_comments_count!

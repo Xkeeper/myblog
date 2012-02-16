@@ -55,7 +55,7 @@ body {
   vertical-align: bottom;
 }
 
-#content input[type="text"] {
+#content input[type="text"],[type="password"] {
   padding: 0.2em;
   font-size: 1.3em;
   font-family: "lucida grande", "lucida sans unicode", "lucida", sans-serif;

@@ -13,6 +13,18 @@ class Admin::SessionsController < ApplicationController
   end
 
   def create
+    if params[:login].blank? or params[:password].blank?
+      flash.now[:error] = "You must provide login and password!"
+      render :action => 'new'
+    else
+      if authenticate_with_passw(params[:login],params[:password])
+        return successful_login
+      else
+        flash.now[:error] = "Wrong login or password"
+        render :action => 'new'
+      end
+    end
+=begin
     return successful_login if allow_login_bypass? && params[:bypass_login]
 
     if params[:openid_url].blank? && !request.env[Rack::OpenID::RESPONSE]
@@ -32,6 +44,7 @@ class Admin::SessionsController < ApplicationController
         render :action => 'new'
       end
     end
+=end
   end
 
   def destroy
@@ -44,6 +57,9 @@ protected
   def successful_login
     session[:logged_in] = true
     redirect_to(admin_root_path)
+  end
+  def authenticate_with_passw(login,passw)
+    login.eql?(enki_config[:author][:login]) && passw.eql?(enki_config[:author][:passw])
   end
 
   def allow_login_bypass?

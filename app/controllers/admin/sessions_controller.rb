@@ -61,8 +61,6 @@ protected
   end
   def authenticate_with_passw(login,passw)
     encrypted_passw = Digest::MD5.hexdigest(passw)
-    a =  (login.casecmp(enki_config[:author][:login]) == 0)
-    b =  encrypted_passw.eql?(enki_config[:author][:passw])
     (login.casecmp(enki_config[:author][:login]) == 0) && encrypted_passw.eql?(enki_config[:author][:passw])
   end
 

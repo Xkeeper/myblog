@@ -1,3 +1,4 @@
+require "digest"
 class Admin::SessionsController < ApplicationController
   layout 'login'
 
@@ -59,7 +60,10 @@ protected
     redirect_to(admin_root_path)
   end
   def authenticate_with_passw(login,passw)
-    login.eql?(enki_config[:author][:login]) && passw.eql?(enki_config[:author][:passw])
+    encrypted_passw = Digest::MD5.hexdigest(passw)
+    a =  (login.casecmp(enki_config[:author][:login]) == 0)
+    b =  encrypted_passw.eql?(enki_config[:author][:passw])
+    (login.casecmp(enki_config[:author][:login]) == 0) && encrypted_passw.eql?(enki_config[:author][:passw])
   end
 
   def allow_login_bypass?

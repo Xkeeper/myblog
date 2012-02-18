@@ -59,7 +59,16 @@ body {
   padding: 0.2em;
   font-size: 1.3em;
   font-family: "lucida grande", "lucida sans unicode", "lucida", sans-serif;
-  width: 24em;
+  width: 23em;
   color: #222222;
   text-align: center;
+  display: inline;
+}
+
+#login-field img {
+
+    float:left;
+}
+#password-field img {
+    float:left;
 }

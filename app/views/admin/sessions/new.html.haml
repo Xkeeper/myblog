@@ -3,9 +3,13 @@
   %p= flash[:error]
 = form_tag(admin_session_path) do
   %h2 Stop! Who are you?
-  %p=label_tag 'login','Login:'
-  %p= text_field_tag 'login'
-  %p=label_tag 'password','Password:'
-  %p= password_field_tag 'password'
+  #login-field
+    %p
+      =image_tag 'admin/admin_login_user.png'
+      = text_field_tag 'login'
+  #password-field
+    %p
+      =image_tag 'admin/admin_login_passw.png'
+      = password_field_tag 'password'
   %p= submit_tag("Login")
 

@@ -6,5 +6,5 @@ author:
   name:    Admin        # For copyright notice and ATOM feeds
   email:   admin@localhost # Exception emails will go here, and it is used in ATOM feeds
   login:   Admin  # Login for administration interface
-  passw:   mysuperpass # Password in md5 for administration interface
+  passw:   mysuperpass # Password in md5 for administration interface, use "rake enki:set_password"
 

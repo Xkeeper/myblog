@@ -41,6 +41,7 @@ class Post < ActiveRecord::Base
       post = Post.new(params)
       post.generate_slug
       post.set_dates
+      post.apply_header
       post.apply_filter
       TagList.from(params[:tag_list]).each do |tag|
         post.tags << Tag.new(:name => tag)
@@ -109,7 +110,7 @@ class Post < ActiveRecord::Base
 
   def apply_filter
     self.body_html = EnkiFormatter.format_as_xhtml(self.body)
-    self.body_html.sub!(/<blogcut>.?<br \/>|<blogcut>/, "</p><p id='blogcut'>")
+    self.body_html.sub!(/<blogcut>.?<br \/>|<blogcut>/, "<a id='blogcut'></a>")
     self.body_header_html = EnkiFormatter.format_as_xhtml(self.body_header)
   end
 

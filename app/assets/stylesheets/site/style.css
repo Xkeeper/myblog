@@ -7,7 +7,7 @@ body {
 	background:#eee;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:100%;
-	color:#777;
+	/*color:#777;*/
 	min-width:1000px;
 }
 html, body { height:100%;}
@@ -657,9 +657,10 @@ nav{
 }
 
 .blog-feed{
-	width:630px;
+	width:85%;
 	float:left;
 	margin-left:10px;
+    font-size:13px;
 }
 /* Circular Content Carousel Style */
 .slider{

@@ -14,6 +14,8 @@ class Post < ActiveRecord::Base
 
   validate                :validate_published_at_natural
 
+  self.per_page = 10
+
   def validate_published_at_natural
     errors.add("published_at_natural", "Unable to parse time") unless published?
   end
@@ -49,17 +51,16 @@ class Post < ActiveRecord::Base
       post
     end
 
-    def find_recent(options = {})
+    def find_recent(options = {},page)
       tag = options.delete(:tag)
       options = {
         :order      => 'posts.published_at DESC',
         :conditions => ['published_at < ?', Time.zone.now],
-        :limit      => DEFAULT_LIMIT
       }.merge(options)
       if tag
         find_tagged_with(tag, options)
       else
-        find(:all, options)
+        Post.paginate(:page => page).find(:all, options)
       end
     end
 

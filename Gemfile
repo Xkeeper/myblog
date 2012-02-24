@@ -39,8 +39,7 @@ gem 'aaronh-chronic', :require => 'chronic' # Fixes for 1.9.2
 gem 'coderay'
 gem 'lesstile'
 gem 'formtastic'
-gem 'will_paginate', :git => 'https://github.com/xspond/will_paginate.git',
-  :branch => 'rails3-1'
+gem 'will_paginate', '~> 3.0'
 gem 'gravtastic'
 gem 'loginza'
 

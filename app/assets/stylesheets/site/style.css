@@ -54,7 +54,7 @@ a:hover{
 }
 
 .changer-inner {
-	font-family:'Oswald';
+	font-family:'Open Sans', sans-serif;
 	text-transform:uppercase;
 	font-size:14px;
 	width:150px;
@@ -183,7 +183,7 @@ header .row-1{
 
 
 h1{
-	display:block;
+	/*display:block;
 	height:164px;
 	width:218px;
 	background:url(../assets/logo-bg.png) 0 0 no-repeat;
@@ -198,22 +198,29 @@ h1{
 	font-family: 'Oswald';
 	font-weight:normal;
 	border-top:#545454 1px solid;
+	*/
 }
 
 h1 i{
-	font-style:normal;
+	/*font-style:normal;*/
 	display:block;
-	background:url(../assets/logo-divider.gif) 0 top repeat-x;
-	text-transform:uppercase;
-	padding:6px 6px 0px 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+	/*background:url(../assets/logo-divider.gif) 0 top repeat-x;*/
+	/*text-transform:uppercase;*/
+	/*padding:6px 6px 0px 6px;*/
 	text-align:center;
 }
 	h1 a{
 		position:relative;
-		z-index:9450;
 		display:inline-block;
+        float:left;
 		text-align:center;
-		padding-bottom:20px;
+        color:white;
+        text-decoration: none;
+
+		/*padding-bottom:20px;*/
 	}
 
 h2{
@@ -221,7 +228,7 @@ h2{
 	line-height:1.2em;
 	color:#343434;
 	text-transform:uppercase;
-	font-family:'Oswald';
+	font-family:'Open Sans', sans-serif;
 	font-weight:normal;
 }
 h2 span{
@@ -234,6 +241,13 @@ h2 span{
 	font-size:20px;
 	font-weight:normal;
 }
+.fs20 a{
+    text-decoration: none;
+    color:inherit;
+}
+.fs20 a:hover {
+    color:#ff743e;
+}
 .fs20 span{
 	background-position:right 7px;
 }
@@ -245,7 +259,7 @@ h3{
 
 .offers{
 	color:#ff743e;
-	font-family:'Oswald';
+	font-family:'Open Sans', sans-serif;
 	font-size:20px;
 	line-height:24px;
 	text-decoration:none;
@@ -269,7 +283,7 @@ nav{
 		font-size:12px;
 		line-height:18px;
 		text-transform:uppercase;
-		font-family:'Oswald';
+		font-family:'Open Sans',sans-serif;
 		margin-left:60px !important;
 
 
@@ -356,7 +370,7 @@ nav{
 .title{
 	font-size:26px;
 	line-height:1.2em;
-	font-family:'Oswald';
+	font-family:'Open Sans,sans-serif';
 	color:#343434;
 	display:block;
 	text-transform:uppercase;
@@ -940,7 +954,7 @@ nav{
 	color:#bbb;
 	font-size:14px;
 	line-height:1.2em;
-	font-family:'Oswald';
+	font-family:'Open Sans',sans-serif;
 	text-align:center;
 }
 	.data .inner{

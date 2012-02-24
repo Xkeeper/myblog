@@ -7,7 +7,8 @@
       = stylesheet_link_tag 'application'
       = javascript_include_tag 'application'
       = open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation]
-      %link{:href=>'http://fonts.googleapis.com/css?family=Oswald',:rel=>'stylesheet',:type=>'text/css'}
+      %link{:href=>'http://fonts.googleapis.com/css?family=Open+Sans:700,600&subset=latin,cyrillic',:rel=>'stylesheet',:type=>'text/css'}
+
       = yield(:head)
   %body#home
     %header
@@ -16,9 +17,9 @@
           .full-width
             %h1
               %a{:href => "/"}
-                %img{:alt => "image", :src => "/assets/logo.png"}/
-              %i
-                PREMIUM PORTFOILIO AND BLOG THEME
+                %i
+                  Xkeeper's blog
+                -#%img{:alt => "image", :src => "/assets/logo.png"}/
             %ul.icon-list
               %li
                 %a{:href => "#"}
@@ -57,15 +58,6 @@
             %li= link_to(link.name, link.url)
   %section#content
     .main.clearfix
-      .row-1
-        %span.title.alignright
-          OUR blog entries
-          %img.arrow{:alt => "image", :src => "/assets/arrow.png"}/
-        %ul.breadcrumb
-          %li.where Where you are:
-          %li.home-br
-            %a{:href => "/index.html"} Home
-          %li Blog
       .top25
         .background.bottom54
           .container_12.clearfix.top40
@@ -76,64 +68,14 @@
     %footer
       .container_12.relative
         #twitter.twitter
-      .aside
-        .container_12.clearfix
-          .grid_2
-            %h3.bottom10 Blog Categories
-            %ul.list-1
-              %li
-                %a{:href => "#"} Neque porro
-              %li
-                %a{:href => "#"} Quisquam est
-              %li
-                %a{:href => "#"} Qui dolorem
-              %li
-                %a{:href => "#"} Ipsum quia
-              %li
-                %a{:href => "#"} Neque porro
-          .grid_2
-            %h3.bottom10 Some Links
-            %ul.list-2
-              %li
-                %a{:href => "#"} Neque porro
-              %li
-                %a{:href => "#"} Quisquam est
-              %li
-                %a{:href => "#"} Qui dolorem
-              %li
-                %a{:href => "#"} Ipsum quia
-          .grid_4
-            %h3.bottom10 Our Lifestream
-            #lifestream
-          .grid_4
-            .wrapper.marg-top-pl6
-              %figure.logo-small
-                %img{:alt => "image", :src => "/assets/logo-small.png"}/
-              .logo-info Premium Portfolio And Blog Theme
-            .top10.color
-              Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur
-            %form#form-subscribe{:enctype => "multipart/form-data", :method => "get"}
-              %fieldset
-                %input{:onblur => "if(this.value=='')this.value='your email';", :onclick => "if(this.value=='your email')this.value='';", :type => "text", :value => "your email"}
-                  %a.send_bt{:href => "javascript:{}"} subscribe
       .row
         .container_12.clearfix
           .grid_12
             %ul.footer-menu
-              %li
-                %a{:href => "/index.html"} Home
-              %li
-                %a{:href => "/about.html"} About
-              %li
-                %a{:href => "/portfolio.html"} Portfolio
-              %li.current
-                %a{:href => "/blog.html"} Blog
-              %li
-                %a{:href => "/contact.html"} Contact
+              - page_links_for_navigation.each do |link|
+                %li{:class =>cp(link.url)}= link_to(link.name, link.url)
             .fright
-              Copiright © 20011
-              %a{:href => "#"} Lustrel
-              by Fireform
+              All rights are broken © 2012
       .container_12
         .divider1
 

@@ -14,6 +14,8 @@ class Post < ActiveRecord::Base
 
   validate                :validate_published_at_natural
 
+  self.per_page = 10
+
   def validate_published_at_natural
     errors.add("published_at_natural", "Unable to parse time") unless published?
   end
@@ -49,17 +51,16 @@ class Post < ActiveRecord::Base
       post
     end
 
-    def find_recent(options = {})
+    def find_recent(options = {},page)
       tag = options.delete(:tag)
       options = {
         :order      => 'posts.published_at DESC',
         :conditions => ['published_at < ?', Time.zone.now],
-        :limit      => DEFAULT_LIMIT
       }.merge(options)
       if tag
         find_tagged_with(tag, options)
       else
-        find(:all, options)
+        Post.paginate(:page => page).find(:all, options)
       end
     end
 
@@ -101,10 +102,15 @@ class Post < ActiveRecord::Base
   end
 
   def apply_header
+    header_length = 250
+    if self.body.length < header_length + 50;
+      self.body_header = self.body
+    else
     index = self.body.index('<blogcut>')
-    wordcount = index ? index : 250
+    wordcount = index ? index : header_length
     charcount = self.body.rindex(/[\r\n]/, wordcount)
     self.body_header = self.body[0...charcount]
+    end
     #self.body = self.body[charcount..-1]
   end
 

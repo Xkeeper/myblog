@@ -16,7 +16,7 @@
           = render :partial => 'post_header', :locals => {:post => post}
           = link_to "Read more", url_for(post)+'#blogcut', :class=>"link"
           .divider.top30
-      - if more_content?
+      -# if more_content?
         .related
           Looking for more? Head on over to the #{link_to("archives", archives_path)}.
     = will_paginate @posts, :class => 'my_pagination'

@@ -16,8 +16,10 @@ describe "/posts/index.html.haml" do
       :approved_comments => [mock_model(Comment)],
       :tags              => [mock_tag]
     )
+    post_array = [mock_post, mock_post]
+    post_array.stub!(:total_pages).and_return(0)
 
-    assign :posts, [mock_post, mock_post]
+    assign :posts, post_array
   end
 
   after(:each) do

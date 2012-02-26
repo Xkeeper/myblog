@@ -73,6 +73,7 @@ describe Admin::SessionsController, "handling CREATE with post" do
     @controller.instance_eval { flash.extend(DisableFlashSweeping) }
   end
 
+=begin  #TODO: Refactor this
   def stub_open_id_authenticate(url, status_code, return_value)
     status = mock("Result", :successful? => status_code == :successful, :message => '')
     @controller.stub!(:enki_config).and_return(mock("enki_config", :author_open_ids => [
@@ -143,4 +144,5 @@ describe Admin::SessionsController, "handling CREATE with post" do
     end
     it_should_behave_like "not logged in"
   end
+=end
 end

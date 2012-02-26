@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   def index
     @tag = params[:tag]
-    @posts = Post.find_recent({:tag => @tag, :include => :tags}, params[:page])
+    @page = params[:page]
+    @posts = Post.find_recent(:tag => @tag, :include => :tags, :page => @page)
 
     respond_to do |format|
       format.html

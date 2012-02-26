@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  DEFAULT_LIMIT = 15
+  DEFAULT_LIMIT = 10
 
   acts_as_taggable
 
@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
 
   validate                :validate_published_at_natural
 
-  self.per_page = 10
+  self.per_page = DEFAULT_LIMIT
 
   def validate_published_at_natural
     errors.add("published_at_natural", "Unable to parse time") unless published?
@@ -51,8 +51,9 @@ class Post < ActiveRecord::Base
       post
     end
 
-    def find_recent(options = {},page)
+    def find_recent(options = {})
       tag = options.delete(:tag)
+      page = options.delete(:page)
       options = {
         :order      => 'posts.published_at DESC',
         :conditions => ['published_at < ?', Time.zone.now],
@@ -60,7 +61,7 @@ class Post < ActiveRecord::Base
       if tag
         find_tagged_with(tag, options)
       else
-        Post.paginate(:page => page).find(:all, options)
+        Post.scoped(options).paginate(:page => page)
       end
     end
 

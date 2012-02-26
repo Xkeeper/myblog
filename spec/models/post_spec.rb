@@ -15,14 +15,12 @@ end
 
 describe Post, ".find_recent" do
   it 'finds the most recent posts that were published before now' do
-    now = Time.now
-    Time.stub!(:now).and_return(now)
-    Post.should_receive(:find).with(:all, {
-      :order      => 'posts.published_at DESC',
-      :conditions => ['published_at < ?', now],
-      :limit      => Post::DEFAULT_LIMIT
-    })
-    Post.find_recent
+    30.times{|i| Factory.create(:post, :published_at => i.days.ago)}
+    @posts = Post.find_recent
+    @posts.size.should eq Post::DEFAULT_LIMIT
+    @posts[0...-1].each_index do |i|
+      @posts[i].published_at.should >= @posts[i+1].published_at
+    end
   end
 
   it 'finds the most recent posts that were published before now with a tag' do
@@ -31,7 +29,6 @@ describe Post, ".find_recent" do
     Post.should_receive(:find_tagged_with).with('code', {
       :order      => 'posts.published_at DESC',
       :conditions => ['published_at < ?', now],
-      :limit      => Post::DEFAULT_LIMIT
     })
     Post.find_recent(:tag => 'code')
   end

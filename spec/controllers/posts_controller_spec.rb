@@ -37,7 +37,7 @@ describe PostsController do
     it_should_behave_like('successful posts list')
 
     it "should find recent posts" do
-      Post.should_receive(:find_recent).with(:tag => nil, :include => :tags).and_return(@posts)
+      Post.should_receive(:find_recent).with(:tag => nil, :include => :tags, :page => anything).and_return(@posts)
       do_get
     end
   end
@@ -55,7 +55,7 @@ describe PostsController do
     it_should_behave_like('successful posts list')
 
     it "should find recent tagged posts" do
-      Post.should_receive(:find_recent).with(:tag => 'code', :include => :tags).and_return(@posts)
+      Post.should_receive(:find_recent).with(:tag => 'code', :include => :tags, :page => anything).and_return(@posts)
       do_get
     end
   end
@@ -99,7 +99,7 @@ describe PostsController do
     it_should_behave_like('ATOM feed')
 
     it "should find recent posts" do
-      Post.should_receive(:find_recent).with(:tag => nil, :include => :tags).and_return(@posts)
+      Post.should_receive(:find_recent).with(:tag => nil, :include => :tags, :page => nil).and_return(@posts)
       do_get
     end
   end
@@ -119,7 +119,7 @@ describe PostsController do
     it_should_behave_like('ATOM feed')
 
     it "should find recent posts" do
-      Post.should_receive(:find_recent).with(:tag => 'code', :include => :tags).and_return(@posts)
+      Post.should_receive(:find_recent).with(:tag => 'code', :include => :tags, :page => nil).and_return(@posts)
       do_get
     end
   end

@@ -1,0 +1,9 @@
+#Config file for tests
+title: My Enki Blog
+url:   http://testblog.com
+author:
+  name:    Admin        # For copyright notice and ATOM feeds
+  email:   admin@localhost # Exception emails will go here, and it is used in ATOM feeds
+  login:   Admin  # Login for administration interface
+  passw:   31c866e8375ddea50244a728cecbbe28 # Password in md5 for administration interface (testpass$blog)
+

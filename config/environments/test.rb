@@ -38,4 +38,5 @@ Enki::Application.configure do
   config.active_support.deprecation = :stderr
 
   config.time_zone = "Moscow"
+  config.enki_config_file = Enki::Config.test
 end

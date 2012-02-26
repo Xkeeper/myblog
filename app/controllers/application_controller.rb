@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def enki_config
-    @@enki_config = Enki::Config.default
+    @@enki_config = Rails.application.config.enki_config_file
   end
   helper_method :enki_config
 end

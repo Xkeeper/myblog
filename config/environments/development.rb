@@ -24,5 +24,6 @@ Enki::Application.configure do
   config.action_mailer.delivery_method = :test
   config.time_zone = "Moscow"
 
+  config.enki_config_file = Enki::Config.default
 end
 

@@ -54,5 +54,6 @@ Enki::Application.configure do
 
   config.time_zone = "Moscow"
 
+  config.enki_config_file = Enki::Config.default
 
 end

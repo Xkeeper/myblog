@@ -20,6 +20,14 @@ module Enki
       Enki::Config.new(default_location)
     end
 
+    def self.test
+      Enki::Config.new(test_location)
+    end
+
+    def self.test_location
+      "#{Rails.root}/config/enki_test.yml"
+    end
+
     def self.default_location
       "#{Rails.root}/config/enki.yml"
     end

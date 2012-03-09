@@ -15,7 +15,11 @@
         .extr
           = render :partial => 'post_header', :locals => {:post => post}
           = link_to "Read more", url_for(post)+'#blogcut', :class=>"link"
-          .divider.top30
+          .top15
+          - unless post.tags.empty?
+            %ul.tags
+              #{linked_tag_list(post.tags)}
+          .divider.top10
       -# if more_content?
         .related
           Looking for more? Head on over to the #{link_to("archives", archives_path)}.

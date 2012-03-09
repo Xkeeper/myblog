@@ -213,14 +213,13 @@ h1 i{
 	text-align:center;
 }
 	h1 a{
-		position:relative;
+		position:absolute;
 		display:inline-block;
         float:left;
 		text-align:center;
         color:white;
         text-decoration: none;
-
-		/*padding-bottom:20px;*/
+        top: 2px;
 	}
 
 h2{
@@ -270,7 +269,7 @@ h3{
 nav{
 	position:relative;
 	z-index:50;
-	padding:0px 0px 16px 0px;
+	padding:0px 0px 8px 0px;
 	border-top:#333 1px solid;
 	border-bottom:#292929 2px solid;
 	background:#2e2e2e;
@@ -292,7 +291,7 @@ nav{
 		color:#bbb;
 		display:inline-block;
 		text-decoration:none;
-		padding:13px 0 0 0;
+		padding:8px 0 0 0;
 
 	}
 	ul.sf-menu>li.backLava{
@@ -650,16 +649,19 @@ nav{
 	line-height:1.2em;
 }
 
+.tags {
+    overflow: auto;
+}
 .tags a{
 	background:url(../assets/tag-bg.gif) 0 0 repeat-x;
 	text-decoration:none;
 	color:#777;
 	padding:4px 16px;
 	display:inline-block;
-	font-size:12px;
-	line-height:1.2em;
+	font-size:11px;
+	line-height:0.8em;
 	float:left;
-	margin:0 10px 10px 0;
+	margin:0 5px 5px 0;
 	border-radius:2px;
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
@@ -671,7 +673,7 @@ nav{
 }
 
 .blog-feed{
-	width:85%;
+	width:95%;
 	float:left;
 	margin-left:10px;
     font-size:13px;

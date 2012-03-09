@@ -68,6 +68,7 @@ class InitializeDb < ActiveRecord::Migration
     add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
     add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
 
+=begin
     create_table "taggings" do |t|
       t.integer  "tag_id"
       t.integer  "taggable_id"
@@ -83,6 +84,7 @@ class InitializeDb < ActiveRecord::Migration
     end
 
     add_index "tags", ["name"], :name => "index_tags_on_name"
+=end
 
     create_table "undo_items" do |t|
       t.string   "type",       :null => false

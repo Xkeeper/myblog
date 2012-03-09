@@ -59,7 +59,7 @@ class Post < ActiveRecord::Base
         :conditions => ['published_at < ?', Time.zone.now],
       }.merge(options)
       if tag
-        find_tagged_with(tag, options)
+        tagged_with(tag, options).paginate(:page => page)
       else
         Post.scoped(options).paginate(:page => page)
       end
@@ -136,8 +136,10 @@ class Post < ActiveRecord::Base
   end
 
   # TODO: Contribute this back to acts_as_taggable_on_steroids plugin
+=begin
   def tag_list=(value)
     value = value.join(", ") if value.respond_to?(:join)
     super(value)
   end
+=end
 end

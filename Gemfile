@@ -20,6 +20,8 @@ gem 'therubyracer'
 
 gem 'jquery-rails'
 
+gem 'acts-as-taggable-on', '~> 2.2.2'
+
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server

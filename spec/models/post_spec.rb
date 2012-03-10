@@ -6,9 +6,9 @@ describe Post, "integration" do
     it 'increments tag counter cache' do
       post1 = Post.create!(:title => 'My Post', :body => "body", :tag_list => "ruby")
       post2 = Post.create!(:title => 'My Post', :body => "body", :tag_list => "ruby")
-      Tag.find_by_name('ruby').taggings_count.should == 2
+      Post.tag_counts.find_by_name('ruby').count.should == 2
       Post.last.destroy
-      Tag.find_by_name('ruby').taggings_count.should == 1
+      Post.tag_counts.find_by_name('ruby').count.should == 1
     end
   end
 end
@@ -24,13 +24,15 @@ describe Post, ".find_recent" do
   end
 
   it 'finds the most recent posts that were published before now with a tag' do
-    now = Time.now
-    Time.stub!(:now).and_return(now)
-    Post.should_receive(:find_tagged_with).with('code', {
-      :order      => 'posts.published_at DESC',
-      :conditions => ['published_at < ?', now],
-    })
-    Post.find_recent(:tag => 'code')
+    test_tag = %w(rails_tag)
+    30.times{|i| Factory.create(:post, :published_at => i.days.ago)}
+    30.times{|i| Factory.create(:post, :published_at => i.days.ago, :tag_list => test_tag)}
+    @posts = Post.find_recent(:tag => test_tag)
+    @posts.size.should eq Post::DEFAULT_LIMIT
+    @posts[0...-1].each_index do |i|
+      @posts[i].published_at.should >= @posts[i+1].published_at
+      @posts[i].tag_list.should eq test_tag
+    end
   end
 
   it 'finds all posts grouped by month' do

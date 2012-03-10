@@ -1,6 +1,6 @@
 require 'factory_girl'
 
-Factory.define(:tag) do |a|
+Factory.define(:tag, :class => ActsAsTaggableOn::Tag) do |a|
   a.name 'Tag'
 end
 

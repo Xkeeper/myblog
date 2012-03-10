@@ -94,7 +94,6 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.4)
-    lesstile (1.0.1)
     libv8 (3.3.10.4)
     loginza (0.2.0)
       json
@@ -205,7 +204,6 @@ DEPENDENCIES
   hpricot
   jquery-rails
   json
-  lesstile
   loginza
   rack-openid
   rails (~> 3.1.1)

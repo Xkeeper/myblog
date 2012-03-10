@@ -45,8 +45,8 @@ class Post < ActiveRecord::Base
       post.set_dates
       post.apply_header
       post.apply_filter
-      TagList.from(params[:tag_list]).each do |tag|
-        post.tags << Tag.new(:name => tag)
+      ActsAsTaggableOn::TagList.from(params[:tag_list]).each do |tag|
+        post.tags << ActsAsTaggableOn::Tag.new(:name => tag)
       end
       post
     end

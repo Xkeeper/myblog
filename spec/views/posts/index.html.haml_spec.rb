@@ -4,7 +4,7 @@ describe "/posts/index.html.haml" do
   before(:each) do
     view.stub!(:enki_config).and_return(Enki::Config.default)
 
-    mock_tag = mock_model(Tag,
+    mock_tag = mock_model(ActsAsTaggableOn::Tag,
       :name => 'code'
     )
 

@@ -12,37 +12,34 @@
       = yield(:head)
   %body#home
     %header
-      -#.row-1
-      -#  .container_12.clearfix
-      -#    .full-width
-      -#      %h1
-      -#        %a{:href => "/"}
-      -#          %img{:alt => "image", :src => "/assets/xlogo.png"}/
-      -#      %ul.icon-list
-      -#        %li
-      -#          %a{:href => "#"}
-      -#            %img{:alt => "image", :src => "/assets/twitter.png"}/
-      -#        %li
-      -#          %a{:href => "#"}
-      -#            %img{:alt => "image", :src => "/assets/google .png"}/
-      -#        %li
-      -#          %a{:href => "#"}
-      -#            %img{:alt => "image", :src => "/assets/facebook.png"}/
-      -#        %li
-      -#          %a{:href => "#"}
-      -#            %img{:alt => "image", :src => "/assets/dribble.png"}/
-      -#        %li
-      -#          %a{:href => "#"}
-      -#            %img{:alt => "image", :src => "/assets/vimeo.png"}/
-      -#      %form#form-search{:enctype => "multipart/form-data", :method => "get"}
-      -#        %fieldset
-      -#          %input{:name => "search", :type => "text"}
-      -#            %a#send_bt{:href => "javascript:{}", :onclick => "jQuery('#form-search').submit();"} Go
+      .row-1
+        .container_12.clearfix
+          .full-width
+            %h1
+              %a{:href => "/"}
+                %img{:alt => "image",:class =>"logo-image", :src => "/assets/logo.png"}/
+            %ul.icon-list
+              %li
+                %a{:href => "#"}
+                  %img{:alt => "image", :src => "/assets/twitter.png"}/
+              %li
+                %a{:href => "#"}
+                  %img{:alt => "image", :src => "/assets/google .png"}/
+              %li
+                %a{:href => "#"}
+                  %img{:alt => "image", :src => "/assets/facebook.png"}/
+              %li
+                %a{:href => "#"}
+                  %img{:alt => "image", :src => "/assets/dribble.png"}/
+              %li
+                %a{:href => "#"}
+                  %img{:alt => "image", :src => "/assets/vimeo.png"}/
+            %form#form-search{:enctype => "multipart/form-data", :method => "get"}
+              %fieldset
+                %input{:name => "search", :type => "text"}
+                  %a#send_bt{:href => "javascript:{}", :onclick => "jQuery('#form-search').submit();"} Go
       %nav
         .container_12.clearfix
-          %h1
-            %a{:href => "/"}
-              %img{:alt => "image", :src => "/assets/xlogo.png"}/
           .full-width
             %ul.sf-menu
               - page_links_for_navigation.each do |link|

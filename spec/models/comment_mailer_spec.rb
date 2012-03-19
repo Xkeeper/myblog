@@ -18,11 +18,11 @@ describe CommentMailer do
     end
 
     it "should set the correct from using enki configuration" do
-      @mailer.from.should == ["xkeeper@0fh.ru"]
+      @mailer.from.should == ["admin@localhost"]
     end
 
     it "should set the correct to using enki configuration" do
-      @mailer.to.should == ["xkeeper@0fh.ru"]
+      @mailer.to.should == ["admin@localhost"]
     end
 
     it "should set the correct subject using enki configuration" do

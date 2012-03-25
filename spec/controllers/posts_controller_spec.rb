@@ -127,9 +127,7 @@ describe PostsController do
   describe "handling GET for a single post" do
     before(:each) do
       @post = mock_model(Post)
-      @comment = mock_model(Post)
       Post.stub!(:find_by_permalink).and_return(@post)
-      Comment.stub!(:new).and_return(@comment)
     end
 
     def do_get
@@ -147,7 +145,7 @@ describe PostsController do
     end
 
     it "should find the post requested" do
-      Post.should_receive(:find_by_permalink).with('2008', '01', '01', 'a-post', :include => [:approved_comments, :tags]).and_return(@post)
+      Post.should_receive(:find_by_permalink).with('2008', '01', '01', 'a-post', :include => [:tags]).and_return(@post)
       do_get
     end
 
@@ -156,10 +154,12 @@ describe PostsController do
       assigns[:post].should equal(@post)
     end
 
+=begin
     it "should assign a new comment for the view" do
       do_get
       assigns[:comment].should equal(@comment)
     end
+=end
     
     it "should route /pages to posts#index with tag pages" do
       {:get => "/pages"}.should route_to(:controller => 'posts', :action => 'index', :tag => 'pages')

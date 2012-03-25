@@ -1,5 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
+=begin
 describe DeletePostUndo do
   describe '#process!' do
     it 'creates a new post with comments based on the attributes stored in #data' do
@@ -12,3 +13,4 @@ describe DeletePostUndo do
     end
   end
 end
+=end

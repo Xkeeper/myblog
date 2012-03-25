@@ -3,7 +3,7 @@ function extractId(obj) {
   return tokens[tokens.length-1];
 }
 
-$(document).ready(function (){
+/*$(document).ready(function (){
   $('.comment-body').hide();
 
   $('.comment-link').click (function() {
@@ -20,7 +20,7 @@ $(document).ready(function (){
   });
 
 //This content removed by conflict with common.js in Asset Pipeline
-/*asyncUndoBehaviour();
+*//*asyncUndoBehaviour();
 
   $('form.delete-item').submit(function () {
     asyncDeleteForm($(this));
@@ -31,6 +31,6 @@ $(document).ready(function (){
     $(this).parent('div').parent('div').remove();
     return false;
   });
-*/
+*//*
 
-})
+})*/

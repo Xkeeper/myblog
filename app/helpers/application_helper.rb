@@ -3,13 +3,16 @@ module ApplicationHelper
     Struct.new(:name, :email).new(enki_config[:author][:name], enki_config[:author][:email])
   end
 
+=begin
   def open_id_delegation_link_tags(server, delegate)
     raw links = <<-EOS
       <link rel="openid.server" href="#{server}">
       <link rel="openid.delegate" href="#{delegate}">
     EOS
   end
+=end
 
+=begin
   def format_comment_error(error)
     {
       'body'   => 'Please comment',
@@ -17,4 +20,5 @@ module ApplicationHelper
       'base'   => error.last
     }[error.first.to_s]
   end
+=end
 end

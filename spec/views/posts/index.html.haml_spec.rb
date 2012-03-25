@@ -13,7 +13,6 @@ describe "/posts/index.html.haml" do
       :body_html         => "Posts contents!",
       :published_at      => 1.year.ago,
       :slug              => 'a-post',
-      :approved_comments => [mock_model(Comment)],
       :tags              => [mock_tag]
     )
     post_array = [mock_post, mock_post]

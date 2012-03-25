@@ -4,11 +4,8 @@ describe Admin::DashboardController do
   describe 'handling GET to show' do
     before(:each) do
       @posts    = [mock_model(Post), mock_model(Post)]
-      @comment_activity = [mock("comment-1"), mock("comment-2")]
       Post.stub!(:find_recent).and_return(@posts)
-      Stats.stub!(:new).and_return(@stats = Struct.new(:post_count, :comment_count, :tag_count).new(3,2,1))
-
-      CommentActivity.stub!(:find_recent).and_return(@comment_activity)
+      Stats.stub!(:new).and_return(@stats = Struct.new(:post_count, :tag_count).new(2,1))
 
       session[:logged_in] = true
       get :show
@@ -28,10 +25,6 @@ describe Admin::DashboardController do
 
     it "assigns stats for the view" do
       assigns[:stats].should == @stats
-    end
-
-    it "finds comment activity for the view" do
-      assigns[:comment_activity].should == @comment_activity
     end
   end
 end

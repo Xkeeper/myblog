@@ -3,8 +3,8 @@ Feature: Dashboard
   An admin
   Should be able to see interesting things on the dashboard
 
-  Scenario: viewing dash board
-    Given I am logged in
-    And a post with comments exists
-    When I go to /admin
-    Then I should see "Latest Comments"
+  #Scenario: viewing dash board
+  #  Given I am logged in
+  #  And a post with comments exists
+  #  When I go to /admin
+  #  Then I should see "Latest Comments"

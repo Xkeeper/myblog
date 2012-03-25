@@ -165,6 +165,7 @@ describe Post, 'before validation' do
   end
 end
 
+=begin
 describe Post, '#denormalize_comments_count!' do
   it 'updates approved_comments_count without triggering AR callbacks' do
     p = Post.new
@@ -174,6 +175,7 @@ describe Post, '#denormalize_comments_count!' do
     p.denormalize_comments_count!
   end
 end
+=end
 
 describe Post, 'validations' do
   def valid_post_attributes
@@ -202,11 +204,13 @@ describe Post, 'validations' do
   end
 end
 
+=begin
 describe Post, 'being destroyed' do
   it 'destroys all comments' do
     Post.reflect_on_association(:comments).options[:dependent].should == :destroy
   end
 end
+=end
 
 describe Post, '.build_for_preview' do
   before(:each) do

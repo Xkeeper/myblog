@@ -11,7 +11,6 @@ describe "/admin/posts/index.html.haml" do
       :title             => 'A post',
       :body              => 'Hello I am a post',
       :slug              => 'a-post',
-      :approved_comments => []
     )]
     posts.stub!(:total_pages).and_return(1)
     assign :posts, posts

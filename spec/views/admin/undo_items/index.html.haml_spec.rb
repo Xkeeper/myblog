@@ -8,7 +8,7 @@ describe "/admin/undo_items/index.html.haml" do
   it 'should render' do
     assign :undo_items, [mock_model(UndoItem,
       :created_at  => Time.now,
-      :description => 'Deleted a comment'
+      :description => 'Deleted a post'
     )]
     render :template => '/admin/undo_items/index.html.haml'
   end

@@ -11,9 +11,11 @@ Then /a RuntimeError is thrown when I press "(.*)"/ do |button|
   }.should raise_error
 end
 
+=begin
 Then /^the comment exists$/ do
   Comment.count.should == 2
 end
+=end
 
 Given /^the following comments? exists:$/ do |comment_table|
   comment_table.hashes.each do |hash|

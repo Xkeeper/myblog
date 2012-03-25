@@ -1,34 +1,5 @@
 class InitializeDb < ActiveRecord::Migration
   def self.up
-    create_table "comments" do |t|
-      t.integer  "post_id",                 :null => false
-      t.string   "author",                  :null => false
-      t.string   "author_url",              :null => false
-      t.string   "author_email",            :null => false
-      t.string   "author_openid_authority", :null => false
-      t.text     "body",                    :null => false
-      t.text     "body_html",               :null => false
-      t.datetime "created_at"
-      t.datetime "updated_at"
-    end
-
-    add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
-    add_index "comments", ["created_at"], :name => "index_comments_on_created_at"
-
-    create_table "open_id_authentication_associations" do |t|
-      t.integer "issued"
-      t.integer "lifetime"
-      t.string  "handle"
-      t.string  "assoc_type"
-      t.binary  "server_url"
-      t.binary  "secret"
-    end
-
-    create_table "open_id_authentication_nonces" do |t|
-      t.integer "timestamp",  :null => false
-      t.string  "server_url"
-      t.string  "salt",       :null => false
-    end
 
     create_table "pages" do |t|
       t.string   "title",      :null => false
@@ -48,7 +19,6 @@ class InitializeDb < ActiveRecord::Migration
       t.text     "body",                                                       :null => false
       t.text     "body_html",                                                  :null => false
       t.boolean  "active",                  :default => true,                  :null => false
-      t.integer  "approved_comments_count", :default => 0,                     :null => false
       t.string   "cached_tag_list"
       t.datetime "published_at"
       t.datetime "created_at"

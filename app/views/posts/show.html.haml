@@ -2,7 +2,7 @@
   .extra-wrap.top25
     .data.data-indent
       .inner
-        =@post.approved_comments.size
+        0
       #{@post.published_at.strftime("%e %b")}
     - content_for(:page_title) do
       = post_title(@post)
@@ -14,30 +14,9 @@
           #{linked_tag_list(@post.tags)}
       .divider.top10
       .top25.comments
-        %h3 #{pluralize(@post.approved_comments.size,"comment")}:
-        - unless @comment.errors.empty?
-          .errors
-            %h3 Comment not added!
-            %ul
-              - @comment.errors.sort_by(&:first).each do |error|
-                %li= format_comment_error(error)
+        %h3 Comments:
         %ul.commentlist
-          - @post.approved_comments.each do |comment|
-            <li#{raw cycle(' class="alt"', '')} id="comment-#{comment.id}">
-            = render :partial => 'comments/comment', :locals => {:comment => comment}
+          -#- @post.approved_comments.each do |comment|
+          -#  <li#{raw cycle(' class="alt"', '')} id="comment-#{comment.id}">
+          -#  = render :partial => 'comments/comment', :locals => {:comment => comment}
         .divider.top30
-        .top35
-          %h3.bootom15 Leave a comment
-          .wrapper
-          = form_for([@post, @comment], :url => post_comments_path(@post), :html => {:id => 'form-main'}) do |form|
-            .col-1
-              = loginza_button_tag("Login via OpenID", "http://www.ya.ru")
-            .col-2
-              = form.text_area 'body'
-              -#%p.aligncenter
-                %small
-                  (
-                  %a{:class=> 'link-2', :href => "http://lesstile.rubyforge.org"}lesstile enabled
-                  \- surround code blocks with ---)
-              %p.top25.wrapper.sendbtn
-                = submit_tag "Submit", :class => "form-link tag-input fleft"

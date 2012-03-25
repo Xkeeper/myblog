@@ -9,8 +9,8 @@ Feature: Browsing
     Then I should see "This is a post"
     And I should see a link to all posts tagged "awesome"
 
-  Scenario: browsing the archive, to find more content to read
-    Given there is at least one post titled "My Post"
-    When I go to the home page
-    And I follow "Archives"
-    Then I should see "My Post"
+#  Scenario: browsing the archive, to find more content to read
+#    Given there is at least one post titled "My Post"
+#    When I go to the home page
+#    And I follow "Archives"
+#    Then I should see "My Post"

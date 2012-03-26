@@ -25,5 +25,10 @@ Enki::Application.configure do
   config.time_zone = "Moscow"
 
   config.enki_config_file = Enki::Config.default
+
+  Disqus::defaults[:account] = "xkeeper"
+  Disqus::defaults[:developer] = true
+  Disqus::defaults[:show_powered_by] = false
+
 end
 

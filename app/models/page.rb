@@ -30,6 +30,6 @@ class Page < ActiveRecord::Base
 
   def generate_slug
     self.slug = self.title.dup if self.slug.blank?
-    self.slug.slugorize!
+    self.slug.transliterate
   end
 end

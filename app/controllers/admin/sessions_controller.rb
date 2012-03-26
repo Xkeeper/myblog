@@ -3,11 +3,7 @@ class Admin::SessionsController < ApplicationController
   layout 'login'
 
   def show
-    if using_open_id?
-      create
-    else
       redirect_to :action => 'new'
-    end
   end
 
   def new

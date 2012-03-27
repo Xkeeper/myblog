@@ -131,7 +131,12 @@ class Post < ActiveRecord::Base
 
   def generate_slug
     self.slug = self.title.dup if self.slug.blank?
-    self.slug.slugorize!
+    _slug = self.slug.slugorize
+    unique_count = Post.where("edited_at LIKE ? AND slug LIKE ?",
+                              "#{Time.zone.now.to_date}%",
+                              "#{_slug}%").count
+    _slug << (unique_count+1).to_s if unique_count > 0
+    self.slug = _slug
   end
 
   # TODO: Contribute this back to acts_as_taggable_on_steroids plugin

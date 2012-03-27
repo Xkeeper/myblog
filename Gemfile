@@ -39,6 +39,7 @@ gem 'aaronh-chronic', :require => 'chronic' # Fixes for 1.9.2
 gem 'coderay'
 gem 'formtastic'
 gem 'will_paginate', '~> 3.0'
+gem 'russian'
 gem 'disqus'
 
 # Bundle gems for the local environment. Make sure to

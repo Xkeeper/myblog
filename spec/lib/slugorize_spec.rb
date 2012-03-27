@@ -10,20 +10,16 @@ describe String, '#slugorize' do
 	end
 
 	it "should ditch entities" do
-		"abc&lt;-&#60;xyz".slugorize.should == "abc-xyz"
+		"abc&;-&#;xyz".slugorize.should == "abc-xyz"
 	end
 
-	it "should replace & with and" do
-		"a-&-b-&-c".slugorize.should == "a-and-b-and-c"
+	it "should remove &" do
+		"a-&-b-&-c".slugorize.should == "a-b-c"
 	end
 
 	it "should strip all non-alphanumeric characters except - and &" do
 		'abc""!@#$%^*()/=+|\[],.<>123'.slugorize.should == "abc-123"
 	end
-
-  it "should allow apostrophes for good punctuation" do
-    "tomato's".slugorize.should == "tomato's"
-  end
 
 	it "should replace all whitespace with a dash" do
 		"abc\n\t     xyz".slugorize.should == "abc-xyz"

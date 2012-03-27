@@ -1,5 +1,6 @@
 class Page < ActiveRecord::Base
   validates_presence_of :title, :slug, :body
+  validates_uniqueness_of :slug
 
   before_validation     :generate_slug
 
@@ -30,6 +31,6 @@ class Page < ActiveRecord::Base
 
   def generate_slug
     self.slug = self.title.dup if self.slug.blank?
-    self.slug.transliterate
+    self.slug.slugorize!
   end
 end

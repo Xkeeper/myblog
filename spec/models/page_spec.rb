@@ -10,7 +10,7 @@ describe Page, '#generate_slug' do
   it 'replaces & with and' do
     page = Page.new(:slug => 'a & b & c')
     page.generate_slug
-    page.slug.should == 'a-and-b-and-c'
+    page.slug.should == 'a-b-c'
   end
 
   it 'replaces non alphanumeric characters with -' do
@@ -53,6 +53,10 @@ describe Page, 'validations' do
 
   it 'is invalid with no body' do
     Page.new(valid_page_attributes.merge(:body => '')).should_not be_valid
+  end
+  it 'is invalid with same slug' do
+    Page.create(valid_page_attributes)
+    Page.new(valid_page_attributes).should_not be_valid
   end
 end
 

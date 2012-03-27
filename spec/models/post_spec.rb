@@ -16,10 +16,10 @@ end
 describe Post, ".find_recent" do
   it 'finds the most recent posts that were published before now' do
     30.times{|i| Factory.create(:post, :published_at => i.days.ago)}
-    @posts = Post.find_recent
-    @posts.size.should eq Post::DEFAULT_LIMIT
-    @posts[0...-1].each_index do |i|
-      @posts[i].published_at.should >= @posts[i+1].published_at
+    posts = Post.find_recent
+    posts.size.should eq Post::DEFAULT_LIMIT
+    posts[0...-1].each_index do |i|
+      posts[i].published_at.should >= posts[i+1].published_at
     end
   end
 
@@ -27,11 +27,11 @@ describe Post, ".find_recent" do
     test_tag = %w(rails_tag)
     30.times{|i| Factory.create(:post, :published_at => i.days.ago)}
     30.times{|i| Factory.create(:post, :published_at => i.days.ago, :tag_list => test_tag)}
-    @posts = Post.find_recent(:tag => test_tag)
-    @posts.size.should eq Post::DEFAULT_LIMIT
-    @posts[0...-1].each_index do |i|
-      @posts[i].published_at.should >= @posts[i+1].published_at
-      @posts[i].tag_list.should eq test_tag
+    posts = Post.find_recent(:tag => test_tag)
+    posts.size.should eq Post::DEFAULT_LIMIT
+    posts[0...-1].each_index do |i|
+      posts[i].published_at.should >= posts[i+1].published_at
+      posts[i].tag_list.should eq test_tag
     end
   end
 
@@ -58,7 +58,7 @@ describe Post, '#generate_slug' do
   it 'replaces & with and' do
     post = Post.new(:slug => 'a & b & c')
     post.generate_slug
-    post.slug.should == 'a-and-b-and-c'
+    post.slug.should == 'a-b-c'
   end
 
   it 'replaces non alphanumeric characters with -' do
@@ -71,6 +71,18 @@ describe Post, '#generate_slug' do
     post = Post.new(:title => 'My Post')
     post.generate_slug
     post.title.should == 'My Post'
+  end
+
+  it 'does generate unique slug in one day' do
+    30.times{|i| Factory.create(:post, :published_at => i.days.ago)}
+    posts = Post.all
+    for post in posts
+      unique_count = Post.where("edited_at LIKE ? AND slug = ?",
+                                "#{Time.zone.now.to_date}%",
+                                post.slug).count
+      unique_count.should == 1
+
+    end
   end
 end
 

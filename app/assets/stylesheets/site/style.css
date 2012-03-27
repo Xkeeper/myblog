@@ -961,14 +961,22 @@ nav{
 }
 	.data .inner{
 		width:40px;
-		height:33px;
+		height:41px;
 		background:url(../assets/data-bg.png) 0 0 no-repeat;
 		color:#fff;
-		padding:11px 0 0 0px;
-		margin-bottom:8px;
+		padding:1px 0 0 0px;
 		text-align:center;
 		font-size:14px;
 		line-height:1.2em;
+    }
+
+        .inner .month{
+            color:#000;
+            font-size: 11px;
+            line-height: 1em;
+            padding-bottom: 3px;
+
+
 	}
 .data-indent{
 	float:left;

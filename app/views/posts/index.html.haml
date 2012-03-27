@@ -10,8 +10,9 @@
       .extra-wrap.top25
         .data.data-indent
           .inner
-            0
-          #{post.published_at.strftime("%e %b")}
+            .month
+              #{post.published_at.strftime("%b")}
+            = post.published_at.day
         .extr
           = render :partial => 'post_header', :locals => {:post => post}
           = link_to "Read more", url_for(post)+'#blogcut', :class=>"link"

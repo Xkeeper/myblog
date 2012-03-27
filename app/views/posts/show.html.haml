@@ -2,8 +2,9 @@
   .extra-wrap.top25
     .data.data-indent
       .inner
-        0
-      #{@post.published_at.strftime("%e %b")}
+        .month
+          #{@post.published_at.strftime("%b")}
+        = @post.published_at.day
     - content_for(:page_title) do
       = post_title(@post)
     .extr

@@ -12,10 +12,6 @@ module Enki
       }
     end
 
-    def author_open_ids
-      [self[:author, :open_id]].flatten.map {|uri| URI.parse(uri)}
-    end
-
     def self.default
       Enki::Config.new(default_location)
     end

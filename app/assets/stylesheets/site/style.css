@@ -372,7 +372,7 @@ nav{
 }
 #content {
 	background:url(../assets/content-bg.png) center 0 no-repeat;
-	padding:38px 0 67px 0;
+	padding:18px 0 37px 0;
 	width:100%;
 }
 
@@ -977,6 +977,12 @@ nav{
 	clear:both;
 	height:5px;
 	background:url(../assets/divider-bg.png) 0 bottom repeat-x;
+}
+.divider2{
+    padding-bottom: 3px;
+    clear:both;
+    height:5px;
+    background:url(../assets/divider-bg.png) 0 bottom repeat-x;
 }
 .italic{
 	font-style:italic;

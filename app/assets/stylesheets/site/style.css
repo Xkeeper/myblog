@@ -997,7 +997,7 @@ nav{
 }
 	.data .inner{
 		width:40px;
-		height:41px;
+		height:44px;
 		background:url(../assets/data-bg.png) 0 0 no-repeat;
 		color:#fff;
 		padding:1px 0 0 0px;
@@ -1010,7 +1010,7 @@ nav{
             color:#000;
             font-size: 11px;
             line-height: 1em;
-            padding-bottom: 3px;
+            padding-bottom: 6px;
 
 
 	}

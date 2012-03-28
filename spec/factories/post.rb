@@ -1,5 +1,5 @@
 Factory.define :post do |post|
-  post.title  "My Post"
+  post.sequence(:title) {|n| "My title - #{n}"}
   post.body "My body"
   post.tag_list "My tag"
 end

@@ -5,7 +5,7 @@ describe Post, "integration" do
   describe 'setting tag_list' do
     it 'increments tag counter cache' do
       post1 = Post.create!(:title => 'My Post', :body => "body", :tag_list => "ruby")
-      post2 = Post.create!(:title => 'My Post', :body => "body", :tag_list => "ruby")
+      post2 = Post.create!(:title => 'My Post2', :body => "body", :tag_list => "ruby")
       Post.tag_counts.find_by_name('ruby').count.should == 2
       Post.last.destroy
       Post.tag_counts.find_by_name('ruby').count.should == 1
@@ -73,17 +73,6 @@ describe Post, '#generate_slug' do
     post.title.should == 'My Post'
   end
 
-  it 'does generate unique slug in one day' do
-    30.times{|i| Factory.create(:post, :published_at => i.days.ago)}
-    posts = Post.all
-    for post in posts
-      unique_count = Post.where("edited_at LIKE ? AND slug = ?",
-                                "#{Time.zone.now.to_date}%",
-                                post.slug).count
-      unique_count.should == 1
-
-    end
-  end
 end
 
 describe Post, '#tag_list=' do
@@ -213,6 +202,11 @@ describe Post, 'validations' do
 
   it 'is invalid with bogus published_at_natural' do
     Post.new(valid_post_attributes.merge(:published_at_natural => 'bogus')).should_not be_valid
+  end
+
+  it 'is invalid with same slug in one day' do
+    Factory.create(:post, :title => "My post")
+    Factory.build(:post, :title => "My post").should_not be_valid
   end
 end
 

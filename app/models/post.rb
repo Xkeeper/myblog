@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
 
   validates_presence_of   :title, :slug, :body
 
-  validate                :validate_published_at_natural
+  validate                :validate_published_at_natural, :validate_slug
 
   self.per_page = DEFAULT_LIMIT
 
@@ -131,12 +131,24 @@ class Post < ActiveRecord::Base
 
   def generate_slug
     self.slug = self.title.dup if self.slug.blank?
-    _slug = self.slug.slugorize
-    unique_count = Post.where("edited_at LIKE ? AND slug LIKE ?",
-                              "#{Time.zone.now.to_date}%",
-                              "#{_slug}%").count
-    _slug << (unique_count+1).to_s if unique_count > 0
-    self.slug = _slug
+    self.slug.slugorize!
+  end
+
+  def validate_slug
+    return 1 unless published?
+    if self.id.nil?
+    have_slug = Post.where("published_at LIKE ? AND slug = ?",
+                           "#{self.published_at.to_date}%",
+                           self.slug)
+    else
+    have_slug = Post.where("published_at LIKE ? AND slug = ? AND id <> ?",
+               "#{self.published_at.to_date}%",
+               self.slug,
+               self.id)
+    end
+    errors.add("slug", "This slug already used today") unless have_slug.empty?
+
+
   end
 
   # TODO: Contribute this back to acts_as_taggable_on_steroids plugin

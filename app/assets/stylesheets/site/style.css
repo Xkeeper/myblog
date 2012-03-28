@@ -330,6 +330,30 @@ nav{
 
 .icon-list{float:right;padding:0 3px 0 22px;}
 	.icon-list li{float:left;padding-left:9px;}
+        .icon-list li #github{
+            height: 27px;
+            width: 27px;
+            background: url(../assets/github.png);
+
+        }
+        .icon-list li #github:hover{
+            height: 27px;
+            width: 27px;
+            background: url(../assets/github-hover.png);
+
+        }
+        .icon-list li #twitter{
+            height: 27px;
+            width: 27px;
+            background: url(../assets/twitter.png);
+
+        }
+        .icon-list li #twitter:hover{
+            height: 27px;
+            width: 27px;
+            background: url(../assets/twitter-hover.png);
+
+}
 
 .full-width{
 	margin:0 -10px;
@@ -1181,7 +1205,7 @@ footer .row a:hover{
 	display:none;
 }
 #form-search{
-	width:191px;
+	width:291px;
 	height:27px;
 	background:#323232;
 	float:right;
@@ -1189,7 +1213,7 @@ footer .row a:hover{
 	margin:0px 0 0 0;
 	}
 #form-search input {
-	width:147px;
+	width:247px;
 	padding:7px 10px 0px 10px;
 	height:18px;
 	overflow:hidden;

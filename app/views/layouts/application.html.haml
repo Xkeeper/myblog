@@ -25,15 +25,6 @@
               %li
                 %a{:href => "#", :title => "Github"}
                   #github
-              -#%li
-              -#  %a{:href => "#"}
-              -#    %img{:alt => "image", :src => "/assets/facebook.png"}/
-              -#%li
-              -#  %a{:href => "#"}
-              -#    %img{:alt => "image", :src => "/assets/dribble.png"}/
-              -#%li
-              -#  %a{:href => "#"}
-              -#    %img{:alt => "image", :src => "/assets/vimeo.png"}/
             %form#form-search{:enctype => "multipart/form-data", :method => "get"}
               %fieldset
                 %input{:name => "search", :type => "text"}
@@ -44,16 +35,11 @@
             %ul.sf-menu
               - page_links_for_navigation.each do |link|
                 %li{:class =>cp(link.url)}= link_to(link.name, link.url)
-    -#navigation
-      %h2 Pages
-      %ul
-        - page_links_for_navigation.each do |link|
-          %li= link_to(link.name, link.url)
-      - unless category_links_for_navigation.empty?
-        %h2 Categories
-        %ul
-          - category_links_for_navigation.each do |link|
-            %li= link_to(link.name, link.url)
+      -#- unless category_links_for_navigation.empty?
+      -#  %h2 Categories
+      -#  %ul
+      -#    - category_links_for_navigation.each do |link|
+      -#      %li= link_to(link.name, link.url)
   %section#content
     .main.clearfix
       .top25

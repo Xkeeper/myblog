@@ -1,8 +1,4 @@
 %h2.fs20= post.title
 = preserve post.body_html
 .meta
-  -#%ul
-    -#%li.date
-      Posted on #{format_post_date(post.published_at)}
-    -#%li.comments= link_to(pluralize(post.approved_comments.size, "comment"), post_path(post, :anchor => 'comments'))
 

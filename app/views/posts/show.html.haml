@@ -16,7 +16,4 @@
       .divider.top10
       .top25.comments
         = raw disqus_thread
-        -#- @post.approved_comments.each do |comment|
-        -#  <li#{raw cycle(' class="alt"', '')} id="comment-#{comment.id}">
-        -#  = render :partial => 'comments/comment', :locals => {:comment => comment}
         .divider.top30

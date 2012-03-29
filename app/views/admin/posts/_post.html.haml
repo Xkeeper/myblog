@@ -4,7 +4,6 @@
   %td
     - tmpc = truncate(post.body, :length => 55)
     = (tmpc != '' ? tmpc : ' ')
-  -#%td= post.approved_comments.size
   %td
     = link_to(image_tag('silk/pencil.png', :alt => 'edit'), admin_post_path(post))
     = form_for(post, :as => :post, :url => admin_post_path(post), :html => {:class => 'delete-item', :method => :delete}) do |form|

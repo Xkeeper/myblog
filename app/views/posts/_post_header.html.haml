@@ -2,8 +2,4 @@
 = preserve post.body_header_html
 %span ...
 .meta
-  -#%ul
-    -#%li.date
-      Posted on #{format_post_date(post.published_at)}
-    -#%li.comments= link_to(pluralize(post.approved_comments.size, "comment"), post_path(post, :anchor => 'comments'))
 

@@ -6,21 +6,6 @@ module UrlHelper
     path
   end
 
-=begin
-  def post_comments_path(post)
-    post_path(post) + "/comments"
-  end
-=end
-
-=begin
-  def author_link(comment)
-    if comment.author_url.blank?
-     comment.author
-    else
-      link_to(comment.author, comment.author_url)
-    end
-  end
-=end
   def cp(path)
     "current" if current_page?(path)
   end

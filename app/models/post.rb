@@ -123,11 +123,6 @@ class Post < ActiveRecord::Base
     self.published_at = Chronic.parse(self.published_at_natural)
   end
 
-=begin
-  def denormalize_comments_count!
-    Post.update_all(["approved_comments_count = ?", self.approved_comments.count], ["id = ?", self.id])
-  end
-=end
 
   def generate_slug
     self.slug = self.title.dup if self.slug.blank?
@@ -147,15 +142,6 @@ class Post < ActiveRecord::Base
                self.id)
     end
     errors.add("slug", "This slug already used today") unless have_slug.empty?
-
-
   end
 
-  # TODO: Contribute this back to acts_as_taggable_on_steroids plugin
-=begin
-  def tag_list=(value)
-    value = value.join(", ") if value.respond_to?(:join)
-    super(value)
-  end
-=end
 end

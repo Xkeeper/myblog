@@ -7,13 +7,4 @@ describe Stats do
       Stats.new.post_count.should == 2
     end
   end
-
-=begin
-  describe '#comment_count' do
-    it 'returns the total number of comments' do
-      Comment.should_receive(:count).and_return(2)
-      Stats.new.comment_count.should == 2
-    end
-  end
-=end
 end

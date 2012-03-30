@@ -56,7 +56,8 @@ function processUndo(path, options) {
   }, options || {}));
 
   // Assume success and remove undo link
-  $('a.undo-link[href=' + path + ']').parent('span').hide();
+  var selector = 'a.undo-link[href=\"' + path + '\"]';
+  $(selector).parent('span').hide();
   undo_stack = jQuery.grep(undo_stack, function(e) { return e != path });
 }
 
@@ -102,7 +103,7 @@ function destroyAndUndoBehaviour(type) {
           $('form.delete-item').submit(onDeleteFormClick);
           restripe();
         });
-      }
+      },
     });
     $('form.delete-item').submit(onDeleteFormClick);
   }

@@ -1,4 +1,6 @@
-h1. Enki
+h1. Xkeeper memopad
+
+<b>This is my blog engine, forked from</b> "Enki":http://github.com/xaviershay/enki
 
 A Ruby on Rails blogging app for the fashionable developer.
 

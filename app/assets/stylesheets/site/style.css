@@ -506,6 +506,15 @@ footer .row a:hover{
     color:#a4a4a4;
 }
 
+/*===== arhive =====*/
+
+.archive-month li{
+    padding-left: 12px;
+}
+.archive-month a{
+    text-decoration: none;
+}
+
 /*----- forms -----*/
 #form-subscribe{
     padding:2px;

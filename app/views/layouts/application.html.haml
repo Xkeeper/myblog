@@ -32,7 +32,7 @@
       %nav
         .container_12.clearfix
           .full-width
-            %ul.sf-menu
+            %ul.sf-menu.lavaLamp
               - page_links_for_navigation.each do |link|
                 %li{:class =>cp(link.url)}= link_to(link.name, link.url)
       -#- unless category_links_for_navigation.empty?

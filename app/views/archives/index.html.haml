@@ -11,7 +11,4 @@
         - month.posts.each do |post|
           %li
             = link_to(post.title, post_path(post))
-            - unless post.tags.empty?
-              %span.tags
-                (#{linked_tag_list(post.tags)})
 

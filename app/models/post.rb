@@ -101,13 +101,16 @@ class Post < ActiveRecord::Base
 
   def apply_header
     header_length = 250
-    if self.body.length < header_length + 50;
+    if self.body.length < header_length + 50
       self.body_header = self.body
     else
-    index = self.body.index('<blogcut>')
-    wordcount = index ? index : header_length
-    charcount = self.body.rindex(/[\r\n]/, wordcount)
-    self.body_header = self.body[0...charcount]
+      index = self.body.index('<blogcut>')
+      index ||=  header_length
+      charcount = self.body.rindex(/[\r\n]/, index)
+      if charcount.nil? || charcount < header_length
+        charcount = self.body.rindex(/[\s]/, index)
+      end
+      self.body_header = self.body[0...charcount]
     end
     #self.body = self.body[charcount..-1]
   end

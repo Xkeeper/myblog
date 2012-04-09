@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
     $("ul.lavaLamp").lavaLamp({fx: "easeOutBack", speed: 700});
 
     $("a.link").mouseover(function() {
@@ -10,4 +12,9 @@ $(document).ready(function() {
                     paddingRight: "-=7px"
                 },250);
         });
+
+
+    $("div.tag-toggle-btn").click(function() {
+        $("div.tag-cloud").slideToggle("normal")
+    })
 });

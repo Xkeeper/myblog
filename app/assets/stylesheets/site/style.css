@@ -520,8 +520,46 @@ ul.sf-menu>li.backLava{
 .archive-month a{
     text-decoration: none;
 }
+
+.tag-toggle-btn {
+
+    position: relative;
+    background-color: #292929;
+    padding: 5px;
+    width: 96px;
+    margin: 5px auto;
+    overflow: hidden;
+    box-shadow: 0px 2px 3px #555;
+    -webkit-box-shadow: 0px 2px 3px #555;
+    -moz-box-shadow: 0px 2px 3px #555;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    text-align: center;
+    color:#777;
+    font-size: 1.0em;
+    cursor: pointer;
+
+
+}
+
+.tag-cloud {
+    display: none;
+    position: relative;
+    background-color: #292929;
+    padding: 10px 10px;
+    width: 960px;
+    margin: 10px auto;
+    overflow: hidden;
+    box-shadow: 0px 2px 3px #555;
+    -webkit-box-shadow: 0px 2px 3px #555;
+    -moz-box-shadow: 0px 2px 3px #555;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
 .tag-cloud1 {
-    background:url(../assets/tag-bg.gif) 0 0 repeat-x;
+    /*background:url(../assets/tag-bg.gif) 0 0 repeat-x;*/
     text-decoration:none;
     color:#777;
     padding:4px 16px;
@@ -535,7 +573,7 @@ ul.sf-menu>li.backLava{
     font-size: 1.0em;
 }
 .tag-cloud2 {
-    background:url(../assets/tag-bg.gif) 0 0 repeat-x;
+    /*background:url(../assets/tag-bg.gif) 0 0 repeat-x;*/
     text-decoration:none;
     color:#777;
     padding:4px 16px;
@@ -549,7 +587,7 @@ ul.sf-menu>li.backLava{
     font-size: 1.2em;
 }
 .tag-cloud3 {
-    background:url(../assets/tag-bg.gif) 0 0 repeat-x;
+    /*background:url(../assets/tag-bg.gif) 0 0 repeat-x;*/
     text-decoration:none;
     color:#777;
     padding:4px 16px;
@@ -563,7 +601,7 @@ ul.sf-menu>li.backLava{
     font-size: 1.4em;
 }
 .tag-cloud4 {
-    background:url(../assets/tag-bg.gif) 0 0 repeat-x;
+    /*background:url(../assets/tag-bg.gif) 0 0 repeat-x;*/
     text-decoration:none;
     color:#777;
     padding:4px 16px;

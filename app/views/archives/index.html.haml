@@ -1,4 +1,4 @@
-.blog-feed
+.archive-feed
   - content_for(:page_title) do
     = archives_title
   %h2.bottom10 Archives
@@ -11,4 +11,10 @@
         - month.posts.each do |post|
           %li
             = link_to(post.title, post_path(post))
+.grid_4
+  %h2.bottom10 Tags
+  - tag_cloud(@tags, %w(tag-cloud1 tag-cloud2 tag-cloud3 tag-cloud4)) do |tag, css_class|
+    = link_to tag.name, posts_path(:tag => tag.name),
+      :class => css_class,
+      :title => "#{pluralize(tag.count,"post")} with this tag"
 

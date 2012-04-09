@@ -11,7 +11,7 @@
 
       = yield(:head)
   %body#home
-    %header
+    .header
       .row-1
         .container_12.clearfix
           .full-width
@@ -29,7 +29,7 @@
               %fieldset
                 %input{:name => "search", :type => "text"}
                   %a#send_bt{:href => "javascript:{}", :onclick => "jQuery('#form-search').submit();"} Go
-      %nav
+      .nav
         .container_12.clearfix
           .full-width
             %ul.sf-menu.lavaLamp
@@ -40,7 +40,7 @@
       -#  %ul
       -#    - category_links_for_navigation.each do |link|
       -#      %li= link_to(link.name, link.url)
-  %section#content
+  #content
     .main.clearfix
       .top25
         .background.bottom30
@@ -49,7 +49,7 @@
         .container_12.clearfix
           .divider2
   .main
-    %footer
+    .footer
       .container_12.relative
         #twitter.twitter
       .row

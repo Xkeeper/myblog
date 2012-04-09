@@ -35,11 +35,11 @@ a:hover{
 
 
 /* Content */
-section#content {
+/*section#content {
 
-}
+}*/
 /* Footer */
-footer{
+.footer{
 
 }
 /* Left & Right alignment */
@@ -88,12 +88,12 @@ input, select, textarea {
     margin:20px 15px 0 15px;
 }
 /*===== header =====*/
-header{
+.header{
 }
-header .container_12{
+.header .container_12{
     position:relative;
 }
-header .row-1{
+.header .row-1{
     position:relative;
     z-index:9400;
     background:url(../assets/header-row-1.gif) 0 0 repeat-x #292929;
@@ -146,7 +146,7 @@ h3{
 }
 
 
-nav{
+.nav{
     position:relative;
     z-index:50;
     padding:0px 0px 8px 0px;
@@ -154,10 +154,10 @@ nav{
     border-bottom:#292929 2px solid;
     background:#2e2e2e;
 }
-nav ul{
+.nav ul{
     float:right;
 }
-nav>div>div>ul>li {
+.nav>div>div>ul>li {
     float:left;
     font-size:12px;
     line-height:18px;
@@ -167,7 +167,7 @@ nav>div>div>ul>li {
 
 
 }
-nav ul>li>a, ul.sf-menu>li.backLava{
+.nav ul>li>a, ul.sf-menu>li.backLava{
     color:#bbb;
     display:inline-block;
     text-decoration:none;
@@ -180,8 +180,8 @@ ul.sf-menu>li.backLava{
     padding:12px 0 0 0;
     margin-left:0px !important;
 }
-nav ul a.first{margin-left:0px;}
-nav li.current a, nav li a:hover{
+.nav ul a.first{margin-left:0px;}
+.nav li.current a, nav li a:hover{
     color:#fff;
 }
 
@@ -441,7 +441,7 @@ nav li.current a, nav li a:hover{
     position:relative;
 }
 /*===== footer =====*/
-footer {
+.footer {
     color:#717171;
     position:relative;
     padding-bottom:34px;
@@ -455,7 +455,7 @@ footer {
     background:#393939;
     border-bottom:#424242 1px solid;
 }
-footer .row{
+.footer .row{
     border-top:#2c2c2c 1px solid;
     background:#343434;
     padding:11px 0 17px 0;
@@ -467,15 +467,15 @@ footer .row{
     -webkit-border-radius: 0 0 2px 2px;
     margin-bottom:1px;
 }
-footer .row .fright{
+.footer .row .fright{
     font-size:11px;
     line-height:1.2em;
 }
-footer .row a{
+.footer .row a{
     color:#fff;
     text-decoration:none;
 }
-footer .row a:hover{
+.footer .row a:hover{
     text-decoration:underline;
 }
 .footer-menu{

@@ -15,6 +15,6 @@ $(document).ready(function() {
 
 
     $("div.tag-toggle-btn").click(function() {
-        $("div.tag-cloud").slideToggle("normal")
+        $("div.tag-cloud").slideToggle(300)
     })
 });

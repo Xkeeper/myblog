@@ -1,12 +1,12 @@
 .archive-feed
   - content_for(:page_title) do
     = archives_title
-  %h2.bottom10 Archives
+  %h1.bottom10 Archives
   - if @months.empty?
     %p Once posts are added they will start to appear in this archive.
   - else
     - @months.each do |month|
-      %h4= format_month(month.date)
+      %h3= format_month(month.date)
       %ul.archive-month
         - month.posts.each do |post|
           %li

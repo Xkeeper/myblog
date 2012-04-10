@@ -110,6 +110,14 @@ input, select, textarea {
     text-decoration: none;
     top: -12px;
 }
+h1{
+    font-size:20px;
+    line-height:1.2em;
+    color:#343434;
+    text-transform:uppercase;
+    font-family:'Open Sans', sans-serif;
+    font-weight:normal;
+}
 
 h2{
     font-size:16px;
@@ -194,8 +202,6 @@ ul.sf-menu>li.backLava{
 
 }
 .icon-list li #github:hover{
-    height: 27px;
-    width: 27px;
     background: url(../assets/github-hover.png);
 
 }
@@ -206,8 +212,6 @@ ul.sf-menu>li.backLava{
 
 }
 .icon-list li #twitter:hover{
-    height: 27px;
-    width: 27px;
     background: url(../assets/twitter-hover.png);
 
 }
@@ -318,12 +322,6 @@ ul.sf-menu>li.backLava{
 
 .blog-feed{
     width:95%;
-    float:left;
-    margin-left:10px;
-    font-size:13px;
-}
-.archive-feed{
-    width:630px;
     float:left;
     margin-left:10px;
     font-size:13px;
@@ -512,21 +510,31 @@ ul.sf-menu>li.backLava{
     color:#a4a4a4;
 }
 
-/*===== arhive =====*/
+/*===== archive =====*/
+
+.archive-feed{
+    margin:10px;
+    font-size:13px;
+}
+.archive-feed h1{
+    text-align: center;
+
+}
+
 
 .archive-month li{
-    padding-left: 12px;
+    padding-left: 15px;
 }
 .archive-month a{
     text-decoration: none;
 }
 
-.tag-toggle-btn {
+.tag-toggle{
 
     position: relative;
-    background-color: #292929;
+    background-color: #2e2e2e;
     padding: 5px;
-    width: 96px;
+    width: 960px;
     margin: 5px auto;
     overflow: hidden;
     box-shadow: 0px 2px 3px #555;
@@ -539,6 +547,23 @@ ul.sf-menu>li.backLava{
     color:#777;
     font-size: 1.0em;
     cursor: pointer;
+}
+
+.tag-toggle-btn{
+    width: 80px;
+    margin: 5px auto;
+    box-shadow: 0px 2px 3px #555;
+    -webkit-box-shadow: 0px 2px 3px #555;
+    -moz-box-shadow: 0px 1px 3px #555;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+.tag-toggle-btn:hover{
+
+    box-shadow: 0px 1px 3px #58c3ff;
+    -webkit-box-shadow: 0px 1px 3px #58c3ff;
+    -moz-box-shadow: 0px 1px 3px #58c3ff;
 
 
 }
@@ -548,70 +573,40 @@ ul.sf-menu>li.backLava{
     position: relative;
     background-color: #292929;
     padding: 10px 10px;
-    width: 960px;
+    width: 97%;
     margin: 10px auto;
     overflow: hidden;
-    box-shadow: 0px 2px 3px #555;
-    -webkit-box-shadow: 0px 2px 3px #555;
-    -moz-box-shadow: 0px 2px 3px #555;
+    box-shadow: 0px 1px 3px #555;
+    line-height: 2em;
+    word-spacing: 10px;
+    text-align: center;
+    -webkit-box-shadow: 0px 1px 3px #555;
+    -moz-box-shadow: 0 1px 3px #555;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
 }
+.tag-cloud a {
+    text-decoration: none;
+}
+.tag-cloud a:hover {
+    border-bottom: 1px solid #CCCCCC;
+}
+
 .tag-cloud1 {
-    /*background:url(../assets/tag-bg.gif) 0 0 repeat-x;*/
-    text-decoration:none;
     color:#777;
-    padding:4px 16px;
-    display:inline-block;
-    line-height:0.8em;
-    float:left;
-    margin:0 5px 5px 0;
-    border-radius:2px;
-    -moz-border-radius:2px;
-    -webkit-border-radius:2px;
     font-size: 1.0em;
 }
 .tag-cloud2 {
-    /*background:url(../assets/tag-bg.gif) 0 0 repeat-x;*/
-    text-decoration:none;
     color:#777;
-    padding:4px 16px;
-    display:inline-block;
-    line-height:0.8em;
-    float:left;
-    margin:0 5px 5px 0;
-    border-radius:2px;
-    -moz-border-radius:2px;
-    -webkit-border-radius:2px;
     font-size: 1.2em;
 }
 .tag-cloud3 {
-    /*background:url(../assets/tag-bg.gif) 0 0 repeat-x;*/
-    text-decoration:none;
     color:#777;
-    padding:4px 16px;
-    display:inline-block;
-    line-height:0.8em;
-    float:left;
-    margin:0 5px 5px 0;
-    border-radius:2px;
-    -moz-border-radius:2px;
-    -webkit-border-radius:2px;
     font-size: 1.4em;
 }
 .tag-cloud4 {
-    /*background:url(../assets/tag-bg.gif) 0 0 repeat-x;*/
-    text-decoration:none;
     color:#777;
-    padding:4px 16px;
-    display:inline-block;
-    line-height:0.8em;
-    float:left;
-    margin:0 5px 5px 0;
-    border-radius:2px;
-    -moz-border-radius:2px;
-    -webkit-border-radius:2px;
     font-size: 1.6em;
 }
 

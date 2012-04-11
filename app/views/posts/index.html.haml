@@ -16,7 +16,7 @@
         .extr
           = render :partial => 'post_header', :locals => {:post => post}
           = link_to "Read more", url_for(post)+'#blogcut', :class=>"link"
-          .top15
+          .top10
           - unless post.tags.empty?
             %ul.tags
               #{linked_tag_list(post.tags)}

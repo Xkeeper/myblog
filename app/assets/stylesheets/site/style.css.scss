@@ -1,3 +1,9 @@
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+@import "compass/css3/pie";
+$pie-behavior: url("PIE.htc");
+
+
 /* Global variables ========================================================= */
 
 $my-orange-color: #ff743e;
@@ -20,14 +26,13 @@ p {
 
 a {
   color: $my-orange-color;
-  outline: none; }
+  outline: none;
+  &:hover{
+    text-decoration: none; }}
 
 .tags a:hover, .sendbtn a:hover {
   background: $my-orange-color;
   color: #ffffff; }
-
-a:hover {
-  text-decoration: none; }
 
 /* Left & Right alignment */
 
@@ -39,9 +44,6 @@ a:hover {
 
 .clear {
   clear: both; }
-
-.col-1, .col-2, .col-3 {
-  float: left; }
 
 .alignright {
   text-align: right; }
@@ -222,12 +224,9 @@ nav li a:hover {
   background: #fff; }
 
 #content .background {
-  box-shadow: 0 2px 3px #555;
-  -webkit-box-shadow: 0 2px 3px #555;
-  -moz-box-shadow: 0 2px 3px #555;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px; }
+  @include pie;
+  @include border-radius(10px);
+  @include box-shadow(0 2px 3px #555) }
 
 .link {
   display: inline-block;
@@ -253,9 +252,8 @@ nav li a:hover {
     line-height: 1em;
     float: left;
     margin: 0 5px 5px 0;
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px; } }
+    @include pie;
+    @include border-radius(2px); } }
 
 .blog-feed {
   width: 95%;
@@ -270,9 +268,6 @@ nav li a:hover {
 
 .top25 {
   padding-top: 25px; }
-
-/*.spacer {
-  background: url(../assets/spacer.gif) 0 0 no-repeat; }*/
 
 .bottom30 {
   padding-bottom: 30px; }
@@ -333,9 +328,8 @@ nav li a:hover {
   font-size: 100%;
   line-height: 1.2em;
   color: #717171;
-  border-radius: 0 0 2px 2px;
-  -moz-border-radius: 0 0 2px 2px;
-  -webkit-border-radius: 0 0 2px 2px;
+  @include pie;
+  @include border-radius(0 0 2px 2px);
   margin-bottom: 1px;
   .fright {
     font-size: 90%;
@@ -385,12 +379,9 @@ nav li a:hover {
   width: 960px;
   margin: 5px auto;
   overflow: hidden;
-  box-shadow: 0 2px 3px #555;
-  -webkit-box-shadow: 0 2px 3px #555;
-  -moz-box-shadow: 0 2px 3px #555;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
+  @include pie;
+  @include box-shadow(0 2px 3px #555);
+  @include border-radius(10px);
   text-align: center;
   color: #777;
   font-size: 100%;
@@ -399,20 +390,16 @@ nav li a:hover {
 .tag-toggle-btn {
   width: 80px;
   margin: 5px auto;
-  box-shadow: 0 2px 3px #555;
+  background-color: #2e2e2e;
   font-family: 'Open Sans', serif;
   font-size: 100%;
   color: #BBBBBB;
-  -webkit-box-shadow: 0 2px 3px #555;
-  -moz-box-shadow: 0 1px 3px #555;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
+  @include pie;
+  @include box-shadow(0 1px 3px #555);
+  @include border-radius(10px);
   &:hover {
     color: #FFFFFF;
-    box-shadow: 0 1px 3px #58c3ff;
-    -webkit-box-shadow: 0 1px 3px #58c3ff;
-    -moz-box-shadow: 0 1px 3px #58c3ff; } }
+    @include box-shadow(0 1px 3px #58c3ff); } }
 
 .tag-cloud {
   display: none;
@@ -428,11 +415,9 @@ nav li a:hover {
   text-align: center;
   text-transform: uppercase;
   font-family: 'Open Sans',serif;
-  -webkit-box-shadow: 0px 1px 3px #555;
-  -moz-box-shadow: 0 1px 3px #555;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
+  @include pie;
+  @include box-shadow(0 1px 3px #555);
+  @include border-radius(10px);
   a {
     color: #777;
     text-decoration: none;

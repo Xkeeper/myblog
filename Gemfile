@@ -13,7 +13,7 @@ group :assets do
     gem 'coffee-rails', '~> 3.1.0'
     gem 'uglifier'
     gem 'haml-rails'
-    gem "compass", '~> 0.12.alpha'
+    gem "compass-rails"
 end
 
 gem 'therubyracer'

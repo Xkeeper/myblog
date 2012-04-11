@@ -11,6 +11,6 @@ body_string = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do e
 1.upto(100) do |i|
   Post.create(:title => "Test blog post",
                :body =>body_string,
-               :tag_list => ['test_tag','test_tag2','test_tag3','test_tag4','test_tag5','test_tag6','test_tag7','test_tag8','test_tag9'],
+               :tag_list => %w(test_tag test_tag2 test_tag3 test_tag4 test_tag5 test_tag6 test_tag7 test_tag8 test_tag9),
                :published_at => i.month.ago)
 end

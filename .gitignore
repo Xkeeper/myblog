@@ -10,3 +10,4 @@ db/schema.rb
 .rvmrc
 .idea/*
 .DS_Store
+public/assets

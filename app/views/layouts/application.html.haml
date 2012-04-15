@@ -6,7 +6,6 @@
       = csrf_meta_tag
       = stylesheet_link_tag 'application'
       = javascript_include_tag 'application'
-      = open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation]
       %link{:href=>'http://fonts.googleapis.com/css?family=Open+Sans:700,600&subset=latin,cyrillic',:rel=>'stylesheet',:type=>'text/css'}
 
       = yield(:head)

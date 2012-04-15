@@ -12,7 +12,6 @@ group :assets do
     gem 'sass-rails', '~> 3.1.0'
     gem 'coffee-rails', '~> 3.1.0'
     gem 'uglifier'
-    gem 'haml-rails'
     gem "compass-rails"
 end
 
@@ -23,6 +22,7 @@ gem 'jquery-rails'
 gem 'acts-as-taggable-on', '~> 2.2.2'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'haml-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'

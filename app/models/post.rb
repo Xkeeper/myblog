@@ -133,10 +133,17 @@ class Post < ActiveRecord::Base
   end
 
   def validate_slug
-    return true unless self.published?
+    return 1 unless self.published?
+    if self.id.nil?
     have_slug = Post.where("date(published_at) = ? AND slug = ?",
                            self.published_at.to_date,
                            self.slug)
+    else
+    have_slug = Post.where("date(published_at) = ? AND slug = ? AND id <> ?",
+               self.published_at.to_date,
+               self.slug,
+               self.id)
+    end
     errors.add("slug", "This slug already used today") unless have_slug.empty?
   end
 

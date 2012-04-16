@@ -26,7 +26,8 @@ gem 'haml-rails'
 
 group :production do
 # Use unicorn as the web server
-    gem 'unicorn'
+    gem 'unicorn' , :require => false
+    gem 'postgres', :require => false
 end
 
 # Bundle the extra gems:

@@ -10,4 +10,8 @@ db/schema.rb
 .rvmrc
 .idea/*
 .DS_Store
+Gemfile.lock
 public/assets
+Capfile
+config/deploy.rb
+config/unicorn.rb

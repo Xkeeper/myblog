@@ -24,14 +24,10 @@ gem 'acts-as-taggable-on', '~> 2.2.2'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml-rails'
 
+group :production do
 # Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
+    gem 'unicorn'
+end
 
 # Bundle the extra gems:
 gem 'RedCloth', :require => 'redcloth'
@@ -53,5 +49,7 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'hpricot'
+  gem 'capistrano'
+  gem 'ruby-debug19'
 end
 

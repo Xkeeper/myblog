@@ -9,7 +9,7 @@
       = post_title(@post)
     .extr
       = render :partial => 'posts/post', :locals => {:post => @post}
-      .top15
+      .top20
       - unless @post.tags.empty?
         %ul.tags
           #{linked_tag_list(@post.tags)}

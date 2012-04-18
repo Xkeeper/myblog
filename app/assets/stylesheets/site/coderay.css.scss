@@ -1,0 +1,38 @@
+/* CODERAY */
+
+.CodeRay {
+  background-color: #FFF;
+  border: 1px solid silver;
+  font-family: "Bitstream Vera Sans Mono", "DejaVu Sans Mono", "Courier New", monospace;
+  font-size: 100%;
+  color: #000;
+  margin: 5px 0;
+  .code {
+    width:100%;
+    overflow: auto;}
+  pre {
+    background: #000000;
+    border: 1px solid #000;
+    color: #ccc;
+    font-family: Courier, monospace;
+    padding: 5px 10px;}
+  .doctype, .key, .instance-variable, .attribute-name {
+    color: #eeefff; }
+  .symbol, .integer, .float {
+    color: #ff658b; }
+  .string {
+    color: #2dc900; }
+  .keyword {
+    color: #ff9d00; }
+  .function, .class {
+    color: #ffdc00; }
+  .regexp, .constant, .tag {
+    color: #7afbff; }
+  .modifier, .predefined-constant {
+    color: #ff84e4; }
+  .comment {
+    color: #008af7; }
+  .tag {
+    color: #070; }
+  .error {
+    color: #ecc; } }

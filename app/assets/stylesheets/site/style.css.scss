@@ -22,7 +22,7 @@ html, body {
   height: 100%; }
 
 p {
-  padding-top: 10px; }
+  padding-top: 5px; }
 
 a {
   color: $my-orange-color;
@@ -104,13 +104,10 @@ h2 {
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
-  span {
-    display: inline-block;
-    background: url(../assets/title-marker.gif) right 5px no-repeat;
-    padding-right: 15px; } }
+   }
 
 .fs20 {
-  font-size: 150%;
+  font-size: 200%;
   font-weight: normal;
   a {
     text-decoration: none;
@@ -188,12 +185,12 @@ nav li a:hover {
         background: url(../assets/twitter-hover.png); } } } }
 
 .full-width {
-  margin: 0 -10px; }
+  margin: 0 10px; }
 
 /*===== content =====*/
 
 .main {
-  width: 980px;
+  width: 960px;
   margin: 0 auto;
   font-size: 100%;
   line-height: 1.2em; }
@@ -258,7 +255,10 @@ nav li a:hover {
 .blog-feed {
   width: 95%;
   float: left;
-  margin-left: 10px; }
+  margin-left: 10px;
+    h2 {
+      border-bottom: 1px dotted #aaa;
+      margin: 1em 0; }}
 
 .top10 {
   padding-top: 10px; }
@@ -443,6 +443,7 @@ nav li a:hover {
 
 
 #form-search {
+  display: none;
   width: 291px;
   height: 27px;
   background: #323232;
@@ -476,14 +477,3 @@ nav li a:hover {
 
 /* Project specifics =========================================================== */
 /* Pour some CSS below ========================================================= */
-
-/* CODERAY */
-
-.CodeRay {
-  background-color: #f8f8f8;
-  border: 1px solid silver;
-  font-family: 'Courier New', 'Terminal', monospace;
-  color: #100;
-  margin-bottom: 1em;
-  .code pre {
-    overflow: auto; } }

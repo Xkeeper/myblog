@@ -324,16 +324,16 @@ nav li a:hover {
 .footer .row {
   border-top: #2c2c2c 1px solid;
   background: #343434;
-  padding: 11px 0 17px 0;
+  padding: 5px 0 7px 0;
   font-size: 100%;
   line-height: 1.2em;
   color: #717171;
   @include pie;
   @include border-radius(0 0 2px 2px);
   margin-bottom: 1px;
-  .fright {
-    font-size: 90%;
-    line-height: 1.2em; }
+  .copyright {
+    float: right;
+    padding-top: 7px;}
   a {
     color: #fff;
     text-decoration: none;
@@ -342,6 +342,7 @@ nav li a:hover {
 
 .footer-menu {
   float: left;
+  padding-top: 10px;
   li {
     font-size: 100%;
     line-height: 1.2em;
@@ -356,6 +357,17 @@ nav li a:hover {
     &.current a {
       color: #ff743e;
       text-decoration: none; } } }
+
+.icon-list-footer {
+  float: right;
+  padding: 0 20px 0 22px;
+  li {
+    float: left;
+    padding-left: 9px;
+    #html5-icon {
+      height: 32px;
+      width: 32px;
+      background: url(../assets/HTML5_x32.png); }}}
 
 
 /*===== archive =====*/

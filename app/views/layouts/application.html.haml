@@ -63,8 +63,12 @@
               %ul.footer-menu
                 - page_links_for_navigation.each do |link|
                   %li{:class =>cp(link.url)}= link_to(link.name, link.url)
-              .fright
+              .copyright
                 All rights are broken © 2012
+              %ul.icon-list-footer
+                %li
+                  %a{:href => "http://validator.w3.org/check?uri=http%3A%2F%2Fblog.0fh.ru%2F", :title => "Valid HTML5!"}
+                    #html5-icon
         .container_12
           .divider1
 

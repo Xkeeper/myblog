@@ -171,13 +171,13 @@ nav li a:hover {
   li {
     float: left;
     padding-left: 9px;
-    #github {
+    #github-icon {
       height: 27px;
       width: 27px;
       background: url(../assets/github.png);
       &:hover {
         background: url(../assets/github-hover.png); } }
-    #twitter {
+    #twitter-icon {
       height: 27px;
       width: 27px;
       background: url(../assets/twitter.png);
@@ -375,7 +375,7 @@ nav li a:hover {
 .tag-toggle {
   position: relative;
   background-color: #2e2e2e;
-  padding: 5px;
+  padding: 5px 0;
   width: 960px;
   margin: 5px auto;
   overflow: hidden;

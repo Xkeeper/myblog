@@ -7,11 +7,11 @@ end
 atom_feed(
   :url         => url,
   :root_url    => posts_path(:tag => @tag, :only_path => false),
-  :schema_date => '2008'
+  :schema_date => '2012'
 ) do |feed|
   feed.title     posts_title(@tag)
   feed.updated   @posts.empty? ? Time.now.utc : @posts.collect(&:edited_at).max
-  feed.generator "Enki", "uri" => "http://enkiblog.com"
+  feed.generator "Xkeeper memopad", "uri" => "http://blog.0fh.ru"
 
   feed.author do |xml|
     xml.name  author.name

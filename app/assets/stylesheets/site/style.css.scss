@@ -222,7 +222,7 @@ nav li a:hover {
 
 #content .background {
   @include pie;
-  @include border-radius(10px);
+  @include border-radius(10px 10px 0 0);
   @include box-shadow(0 2px 3px #555) }
 
 .link {
@@ -329,7 +329,7 @@ nav li a:hover {
   line-height: 1.2em;
   color: #717171;
   @include pie;
-  @include border-radius(0 0 2px 2px);
+  @include border-radius(0 0 10px 10px);
   margin-bottom: 1px;
   .copyright {
     float: right;
@@ -367,7 +367,11 @@ nav li a:hover {
     #html5-icon {
       height: 32px;
       width: 32px;
-      background: url(../assets/HTML5_x32.png); }}}
+      background: url(../assets/HTML5_x32.png); }
+    #rails-icon {
+      height: 32px;
+      width: 32px;
+      background: url(../assets/rails_x32.png); }}}
 
 
 /*===== archive =====*/

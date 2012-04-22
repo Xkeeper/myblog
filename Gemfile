@@ -21,13 +21,13 @@ gem 'jquery-rails'
 
 gem 'acts-as-taggable-on', '~> 2.2.2'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sqlite3'
 gem 'haml-rails'
 
 group :production do
 # Use unicorn as the web server
     gem 'unicorn' , :require => false
-    gem 'postgres', :require => false
+    gem 'pg', :require => false
 end
 
 # Bundle the extra gems:

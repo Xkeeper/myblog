@@ -9,11 +9,13 @@
   margin: 5px 0;
   .code {
     width:100%;
-    overflow: auto;}
+    overflow: auto;
+    background: #000000;}
   pre {
     background: #000000;
     border: 1px solid #000;
     color: #ccc;
+    float: left;
     font-family: Courier, monospace;
     padding: 5px 10px;}
   .doctype, .key, .instance-variable, .attribute-name {
